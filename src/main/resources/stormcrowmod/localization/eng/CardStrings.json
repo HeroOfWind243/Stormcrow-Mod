@@ -1,0 +1,99 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description. NL Second line.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Thruster": {
+    "NAME": "Thruster",
+    "DESCRIPTION": "When drawn, gain !B! Block. NL Draw 1 card. NL Exhaust."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:FallBack": {
+    "NAME": "Fall Back",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! ${modID}:Momentum."
+  },
+  "${modID}:Impact": {
+    "NAME": "Impact",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. Lose half ${modID}:Momentum (rounded up). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal !D! damage. Lose half ${modID}:Momentum (rounded up). NL Exhaust."
+  },
+  "${modID}:Takeoff": {
+    "NAME": "Takeoff",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Impulse !M!."
+  },
+  "${modID}:PulseStrike": {
+    "NAME": "Pulse Strike",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Draw 2 cards."
+  },
+  "${modID}:QuickShot": {
+    "NAME": "Quick Shot",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Deal !D! damage again."
+  },
+  "${modID}:DiveShot": {
+    "NAME": "Dive Shot",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Impulse !D! (the amount of damage dealt)."
+  },
+  "${modID}:SwitchUp": {
+  "NAME": "Switch-Up",
+  "DESCRIPTION": "Gain !${modID}:Block2! Block. NL ${modID}:Pulse: Gain !M! Temporary Strength NL ${modID}:Pulse: Gain !B! Block. NL ${modID}:Pulse."
+  },
+  "${modID}:SuppressiveFire": {
+    "NAME": "Suppressive Fire",
+    "DESCRIPTION": "Deal !D! damage and !M! Weak to 2 random enemies. NL ${modID}:Pulse: Deal !D! damage and !M! Weak to 2 more random enemies."
+  },
+  "${modID}:Slide": {
+    "NAME": "Slide",
+    "DESCRIPTION": "Gain [E]. NL {@@}Next turn, draw !M! additional card{!M!|>1=s}. NL Exhaust."
+  },
+  "${modID}:Overcharge": {
+    "NAME": "Overcharge",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Gain !M! Vulnerable."
+  },
+  "${modID}:ThrustVectoring": {
+    "NAME": "Thrust Vectoring",
+    "DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum and Block equal to the remaining cards in your hand.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum and Block equal to twice the remaining cards in your hand."
+  },
+  "${modID}:Prechargers": {
+    "NAME": "Prechargers",
+    "DESCRIPTION": "Innate. NL Shuffle !M! *Thrusters into your draw pile. NL Exhaust."
+  },
+  "${modID}:SkipABeat": {
+  "NAME": "Skip A Beat",
+  "DESCRIPTION": "Draw !M! card. NL ${modID}:Pulse. NL Exhaust.",
+  "UPGRADE_DESCRIPTION": "Draw !M! card. NL ${modID}:Pulse."
+  },
+  "${modID}:SeismicToss": {
+    "NAME": "Seismic Toss",
+    "DESCRIPTION": "Deal damage equal to your current ${modID}:Momentum. NL ${modID}:Pulse: Stun the enemy and Exhaust this card."
+  },
+  "${modID}:Glide": {
+    "NAME": "Glide",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Gain !M! Artifact."
+  },
+  "${modID}:AllIn": {
+    "NAME": "All In",
+    "DESCRIPTION": "When you deal unblocked attack damage, gain !M! Block. NL Gain 99 Frail."
+  },
+  "${modID}:BruteForce": {
+    "NAME": "Brute Force",
+    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage equal to !M! times the number of skills in your discard pile."
+  },
+  "${modID}:MorePower": {
+    "NAME": "More Power",
+    "DESCRIPTION": "*Thrusters grant !M! additional Block when drawn."
+  }
+}
