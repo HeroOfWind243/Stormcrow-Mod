@@ -1,16 +1,13 @@
 package stormcrowmod.cards.created;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import stormcrowmod.cards.BaseCard;
-import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
 
@@ -29,14 +26,21 @@ public class Thruster extends BaseCard {
 
     public Thruster() {
         super(ID, info);
+        // TODO: Add checks for Pulse Thrusters here
+        AbstractPower p = null;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("MorePower"))) {
+            p = AbstractDungeon.player.getPower(makeID("MorePower"));
+        }
 
-        // TODO: Add checks for More Power and Pulse Thrusters here
-        setBlock(BLOCK, UPG_BLOCK);
+        int bonus = 0;
+        if (p != null) {
+            bonus = p.amount;
+        }
+        setBlock(BLOCK + bonus, UPG_BLOCK);
+
+        this.initializeDescription();
 
         setExhaust(true);
-
-        //setCustomVar("totalBlock", BLOCK, UPG_BLOCK);
-
         tags.add(PilotTags.THRUSTER);
 
     }
@@ -44,23 +48,31 @@ public class Thruster extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, 1));
+        initializeDescription();
     }
 
     @Override
     public void triggerWhenDrawn() {
         this.applyPowers();
         addToTop(new GainBlockAction(AbstractDungeon.player, this.block, true));
+        initializeDescription();
     }
 
     @Override
     public void applyPowers() {
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("MorePower"))) {
-            int realBaseBlock = this.baseBlock;
-            this.baseBlock = this.baseBlock + (AbstractDungeon.player.getPower(makeID("MorePower")).amount);
+            this.baseBlock = BLOCK;
+            AbstractPower p = (AbstractDungeon.player.getPower(makeID("MorePower")));
+            int bonus = 0;
+            if (p != null) {
+                bonus = p.amount;
+            }
+            this.baseBlock += bonus;
+            if (this.upgraded) {
+                this.baseBlock += UPG_BLOCK;
+            }
             super.applyPowers();
-            this.baseBlock = realBaseBlock;
-            this.isBlockModified = (this.block != this.baseBlock);
-        }
+
+            initializeDescription();
     }
 
     @Override
