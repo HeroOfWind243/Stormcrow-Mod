@@ -43,6 +43,8 @@ public class SeismicToss extends BaseCard {
         setDamage(DAMAGE);
         setMagic(0);
 
+        tags.add(PilotTags.PULSE);
+
     }
 
     @Override

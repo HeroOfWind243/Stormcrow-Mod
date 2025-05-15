@@ -42,7 +42,6 @@ public class Thruster extends BaseCard {
 
         setExhaust(true);
         tags.add(PilotTags.THRUSTER);
-
     }
 
     @Override

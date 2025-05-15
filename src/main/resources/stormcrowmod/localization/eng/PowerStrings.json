@@ -39,5 +39,12 @@
       "Your #yThrusters grant an additional #b",
       " #yBlock."
     ]
+  },
+  "${modID}:VulnerableNextTurn": {
+    "NAME": "Vulnerable Next Turn",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " #yVulnerable to all enemies next turn."
+    ]
   }
 }

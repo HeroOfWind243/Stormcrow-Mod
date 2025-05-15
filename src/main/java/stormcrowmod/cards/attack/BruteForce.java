@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
-import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;

@@ -95,5 +95,62 @@
   "${modID}:MorePower": {
     "NAME": "More Power",
     "DESCRIPTION": "*Thrusters grant !M! additional Block when drawn."
+  },
+  "${modID}:Inertia": {
+  "NAME": "Inertia",
+  "DESCRIPTION": "Gain Block equal to ${modID}:Momentum. (!B! Block) NL Lose half ${modID}:Momentum (rounded up). NL Exhaust.",
+    "UPGRADE_DESCRIPTION":"Gain Block equal to ${modID}:Momentum. (!B! Block) NL Lose half ${modID}:Momentum (rounded up)."
+  },
+  "${modID}:BoostKick": {
+    "NAME": "Boost Kick",
+    "DESCRIPTION": "Deal !D! damage. Shuffle a *Thruster int your draw pile."
+  },
+  "${modID}:Agility": {
+    "NAME": "Agility",
+    "DESCRIPTION": "Gain !B! Block. Shuffle a *Thruster int your draw pile."
+  },
+  "${modID}:Afterburner": {
+    "NAME": "Afterburner",
+    "DESCRIPTION": "Draw !M! cards.  If you draw any *Thrusters, draw 1 additional card."
+  },
+  "${modID}:ReverseBoost": {
+    "NAME": "Reverse Boost",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Draw !M! cards."
+  },
+  "${modID}:ASuddenMoment": {
+    "NAME": "A Sudden Moment",
+    "DESCRIPTION": "Retain. NL ${modID}:Impulse !M!. NL Exhaust."
+  },
+  "${modID}:WideFlank": {
+    "NAME": "Wide Flank",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Apply !M! Vulnerable."
+  },
+  "${modID}:LongJump": {
+    "NAME": "Long Jump",
+    "DESCRIPTION": "Draw !M! cards. NL ${modID}:Impulse !${modID}:magic2!."
+  },
+  "${modID}:Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": "Gain !B! Block. NL Shuffle !M! *Thrusters into your draw pile."
+  },
+  "${modID}:FollowThrough": {
+    "NAME": "Follow Through",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, draw !M! additional card."
+  },
+  "${modID}:SeekHigherGround": {
+    "NAME": "Seek Higher Ground",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, apply !M! Vulnerable to all enemies."
+  },
+  "${modID}:RunAndGun": {
+    "NAME": "Run And Gun",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain Block equal to unblocked damage dealt."
+  },
+  "${modID}:Sidestep": {
+    "NAME": "Sidestep",
+    "DESCRIPTION": "Gain !M! Temporary Dexterity. NL ${modID}:Pulse: Gain !M! Temporary Dexterity again."
+  },
+  "${modID}:DoItAgain": {
+    "NAME": "Do It Again",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Put a card from your discard pile on top of your draw pile."
   }
 }
