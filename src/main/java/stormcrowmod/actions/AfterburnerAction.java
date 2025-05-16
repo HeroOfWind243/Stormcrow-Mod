@@ -16,10 +16,12 @@ import static stormcrowmod.StormcrowMod.makeID;
 
 public class AfterburnerAction extends AbstractGameAction {
     private final int amountToDraw;
+    private final int bonusToDraw;
     private final AbstractCreature t;
 
-    public AfterburnerAction(AbstractCreature target, int amountToDraw) {
+    public AfterburnerAction(AbstractCreature target, int amountToDraw, int bonusToDraw) {
         this.amountToDraw = amountToDraw;
+        this.bonusToDraw = bonusToDraw;
         this.t = target;
         this.actionType = ActionType.DRAW;
     }
@@ -27,7 +29,7 @@ public class AfterburnerAction extends AbstractGameAction {
 
     public void update() {
         addToBot(new DrawCardAction(t, amountToDraw));
-        addToBot(new AfterburnerFollowupAction(t, 1));
+        addToBot(new AfterburnerFollowupAction(t, bonusToDraw));
         this.isDone = true;
 
     }

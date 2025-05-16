@@ -21,18 +21,20 @@ public class Afterburner extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
     public Afterburner() {
         super(ID, info);
         this.cardsToPreview = new Thruster();
+
+        setCustomVar("baseDraw", 2);
         setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AfterburnerAction(p, this.magicNumber));
+        addToBot(new AfterburnerAction(p, customVar("baseDraw"), this.magicNumber));
     }
 
     @Override
