@@ -3,6 +3,7 @@ package stormcrowmod;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
@@ -43,6 +44,9 @@ public class StormcrowMod implements
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+
+    public static final Color PILOT_CERULEAN = new Color(6f/255f, 49f/255f, 90f/255f, 1f);
+
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.

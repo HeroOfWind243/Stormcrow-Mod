@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import stormcrowmod.StormcrowMod;
 import stormcrowmod.cards.attack.PulseStrike;
 import stormcrowmod.cards.attack.Strike;
 import stormcrowmod.cards.skill.Defend;
@@ -48,9 +49,9 @@ public class PilotCharacter extends CustomPlayer {
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static PlayerClass STORMCROW_PILOT;
-        @SpireEnum(name = "CHARACTER_NAVY_COLOR") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "PILOT_CERULEAN_COLOR") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "CHARACTER_NAVY_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "PILOT_CERULEAN_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images
@@ -69,7 +70,7 @@ public class PilotCharacter extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         //This is used to color *some* images, but NOT the actual cards. For that, edit the images in the cardback folder!
-        private static final Color cardColor = new Color(6f/255f, 49f/255f, 90f/255f, 1f);
+        private static final Color cardColor = StormcrowMod.PILOT_CERULEAN;
 
         //Methods that will be used in the main mod file
         public static void registerColor() {
@@ -187,9 +188,9 @@ public class PilotCharacter extends CustomPlayer {
         };
     }
 
-    private final Color cardRenderColor = Color.NAVY.cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
-    private final Color cardTrailColor = Color.NAVY.cpy(); //Used for card trail vfx during gameplay.
-    private final Color slashAttackColor = Color.BLUE.cpy(); //Used for a screen tint effect when you attack the heart.
+    private final Color cardRenderColor = StormcrowMod.PILOT_CERULEAN; //Used for some vfx on moving cards (sometimes) (maybe)
+    private final Color cardTrailColor = StormcrowMod.PILOT_CERULEAN; //Used for card trail vfx during gameplay.
+    private final Color slashAttackColor = StormcrowMod.PILOT_CERULEAN; //Used for a screen tint effect when you attack the heart.
     @Override
     public Color getCardRenderColor() {
         return cardRenderColor;
