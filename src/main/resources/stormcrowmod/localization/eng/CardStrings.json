@@ -152,5 +152,9 @@
   "${modID}:DoItAgain": {
     "NAME": "Do It Again",
     "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Put a card from your discard pile on top of your draw pile."
+  },
+  "${modID}:Invert": {
+    "NAME": "Invert",
+    "DESCRIPTION": "Retain. NL ${modID}:Pulse. NL Exhaust."
   }
 }
