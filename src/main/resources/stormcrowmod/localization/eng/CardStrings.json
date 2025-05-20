@@ -155,6 +155,15 @@
   },
   "${modID}:Invert": {
     "NAME": "Invert",
-    "DESCRIPTION": "Retain. NL ${modID}:Pulse. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse. NL Exhaust."
+  },
+  "${modID}:PulseWidthModulator": {
+    "NAME": "PWM",
+    "DESCRIPTION": "At the start of your turn, add !M! *Invert to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate NL At the start of your turn, add !M! *Invert to your hand."
+  },
+  "${modID}:CloseCall": {
+    "NAME": "Close Call",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Gain !M! Weak."
   }
 }

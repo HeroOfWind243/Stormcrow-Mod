@@ -8,4 +8,5 @@ public class PilotTags {
     @SpireEnum public static AbstractCard.CardTags IMPACT;
     @SpireEnum public static AbstractCard.CardTags THRUSTER;
     @SpireEnum public static AbstractCard.CardTags PULSE;
+    @SpireEnum public static AbstractCard.CardTags INVERT;
 }

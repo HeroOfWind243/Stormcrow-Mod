@@ -26,7 +26,9 @@ public class Invert extends BaseCard {
         super(ID, info);
 
         setExhaust(true);
-        setSelfRetain(true);
+        setEthereal(true);
+        tags.add(PilotTags.INVERT);
+        tags.add(PilotTags.PULSE);
     }
 
     @Override

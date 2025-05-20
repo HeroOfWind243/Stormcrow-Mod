@@ -46,5 +46,13 @@
       "Apply #b",
       " #yVulnerable to all enemies next turn."
     ]
+  },
+  "${modID}:PulseWidthModulator": {
+    "NAME": "Pulse Width Modulator",
+    "DESCRIPTIONS": [
+      "Add #b",
+      " #yInvert to your hand at the start of your turn.",
+      " #yInverts to your hand at the start of your turn."
+    ]
   }
 }
