@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import stormcrowmod.StormcrowMod;
-import stormcrowmod.cards.attack.PulseStrike;
+import stormcrowmod.cards.attack.PulseShot;
 import stormcrowmod.cards.attack.Strike;
 import stormcrowmod.cards.skill.Defend;
 import stormcrowmod.cards.skill.Takeoff;
@@ -150,7 +150,7 @@ public class PilotCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Takeoff.ID);
-        retVal.add(PulseStrike.ID);
+        retVal.add(PulseShot.ID);
 
         return retVal;
     }
@@ -168,7 +168,7 @@ public class PilotCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new PulseStrike();
+        return new PulseShot();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

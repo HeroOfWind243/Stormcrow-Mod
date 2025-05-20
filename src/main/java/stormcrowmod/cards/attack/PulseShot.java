@@ -13,8 +13,8 @@ import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
 
-public class PulseStrike extends BaseCard {
-    public static final String ID = makeID(PulseStrike.class.getSimpleName()); //makeID ensures this is unique to this mod
+public class PulseShot extends BaseCard {
+    public static final String ID = makeID(PulseShot.class.getSimpleName()); //makeID ensures this is unique to this mod
     private static final CardStats info = new CardStats(
             PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
@@ -27,12 +27,11 @@ public class PulseStrike extends BaseCard {
     private static final int UPG_DAMAGE = 3;
     private static final int CARD_DRAW = 2;
 
-    public PulseStrike() {
+    public PulseShot() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
 
-        tags.add(CardTags.STRIKE);
         tags.add(PilotTags.PULSE);
     }
 
@@ -44,6 +43,6 @@ public class PulseStrike extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new PulseStrike();
+        return new PulseShot();
     }
 }

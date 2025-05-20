@@ -34,8 +34,8 @@
     "NAME": "Takeoff",
     "DESCRIPTION": "Gain !B! Block. NL ${modID}:Impulse !M!."
   },
-  "${modID}:PulseStrike": {
-    "NAME": "Pulse Strike",
+  "${modID}:PulseShot": {
+    "NAME": "Pulse Shot",
     "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Draw 2 cards."
   },
   "${modID}:QuickShot": {
