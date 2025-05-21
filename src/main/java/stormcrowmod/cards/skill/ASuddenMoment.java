@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import stormcrowmod.actions.ImpulseAction;
 import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.cards.created.Impact;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
 
@@ -30,6 +31,7 @@ public class ASuddenMoment extends BaseCard {
         setSelfRetain(true);
         setExhaust(true);
         setMagic(MAGIC, UPG_MAGIC);
+        this.cardsToPreview = new Impact();
     }
 
     @Override

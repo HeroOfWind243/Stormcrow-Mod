@@ -165,5 +165,43 @@
   "${modID}:CloseCall": {
     "NAME": "Close Call",
     "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Gain !M! Weak."
+  },
+  "${modID}:HopManeuvers": {
+    "NAME": "Hop Maneuvers",
+    "DESCRIPTION": "Gain !M! ${modID}:Momentum when you trigger a ${modID}:Pulse effect."
+  },
+  "${modID}:ReactionForce": {
+    "NAME": "Reaction Force",
+    "DESCRIPTION": "After playing an *Impact, gain Block equal to remaining ${modID}:Momentum."
+  },
+  "${modID}:TwinThrusters": {
+    "NAME": "Twin Thrusters",
+    "DESCRIPTION": "Shuffle a *Thruster into your draw pile for each *Thruster in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You have ",
+      " *Thruster).",
+      " *Thrusters)."
+      ]
+  },
+  "${modID}:BoostThruster": {
+    "NAME": "Boost Thruster",
+    "DESCRIPTION": "Gain !B! Block. NL Shuffle a *Thruster into your draw pile."
+  },
+  "${modID}:RunningStart": {
+    "NAME": "Running Start",
+    "DESCRIPTION": "Innate. NL ${modID}:Impulse !M!. NL End of turn, gain Block equal to ${modID}:Momentum. NL Exhaust."
+  },
+  "${modID}:Coasting": {
+    "NAME": "Coasting",
+    "DESCRIPTION": "Draw a card for every 2 *Thrusters in your discard pile",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Draw ",
+      " card).",
+      " cards)."
+    ]
+  },
+  "${modID}:Skip Shot": {
+    "NAME": "Skip Shot",
+    "DESCRIPTION": "Deal !D! damage.  ${modID}:Impulse !M!. NL End of turn, gain Block equal to ${modID}:Momentum. NL Exhaust."
   }
 }

@@ -32,7 +32,7 @@
     "NAMES": [
       "impulse"
     ],
-    "DESCRIPTION": "Grants #yMomentum equal to the amount and an #yImpact."
+    "DESCRIPTION": "Grants #yMomentum equal to the amount. Add an #yImpact to your hand if you do not have one."
   },
   {
     "PROPER_NAME": "Pulse",

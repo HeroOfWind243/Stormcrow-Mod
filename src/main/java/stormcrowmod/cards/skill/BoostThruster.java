@@ -1,47 +1,51 @@
 package stormcrowmod.cards.skill;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import stormcrowmod.actions.ImpulseAction;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import stormcrowmod.actions.CreateThrusterAction;
+import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
-import stormcrowmod.cards.created.Impact;
+import stormcrowmod.cards.created.Thruster;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
+import stormcrowmod.util.PilotTags;
 
-public class Takeoff extends BaseCard {
-    public static final String ID = makeID(Takeoff.class.getSimpleName()); //makeID ensures this is unique to this mod
+public class BoostThruster extends BaseCard {
+    public static final String ID = makeID(BoostThruster.class.getSimpleName()); //makeID ensures this is unique to this mod
     private static final CardStats info = new CardStats(
             PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.BASIC,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1 //Can use -1 for X, or -2 for unplayable
+            0 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 2;
 
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 3;
 
-    public Takeoff() {
+    public BoostThruster() {
         super(ID, info);
 
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC, UPG_MAGIC);
-        this.cardsToPreview = new Impact();
+        setMagic(MAGIC);
+        this.cardsToPreview = new Thruster();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ImpulseAction(p, this.magicNumber));
+        addToBot(new CreateThrusterAction(this.magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Takeoff();
+        return new BoostThruster();
     }
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import stormcrowmod.actions.ImpulseAction;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.cards.created.Impact;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
 
@@ -28,6 +29,7 @@ public class DiveShot extends BaseCard {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.cardsToPreview = new Impact();
 
     }
 

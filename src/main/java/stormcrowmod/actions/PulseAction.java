@@ -16,22 +16,33 @@ import static stormcrowmod.StormcrowMod.makeID;
 public class PulseAction extends AbstractGameAction {
     private final AbstractGameAction pulseAction;
     private final AbstractGameAction pulseAction2;
+    private final AbstractGameAction pulseAction3;
 
     public PulseAction() {
         this.pulseAction = null;
         this.pulseAction2 = null;
+        this.pulseAction3 = null;
         this.actionType = ActionType.SPECIAL;
     }
 
     public PulseAction(AbstractGameAction a) {
         this.pulseAction = a;
         this.pulseAction2 = null;
+        this.pulseAction3 = null;
         this.actionType = ActionType.SPECIAL;
     }
 
     public PulseAction(AbstractGameAction a, AbstractGameAction b) {
         this.pulseAction = a;
         this.pulseAction2 = b;
+        this.pulseAction3 = null;
+        this.actionType = ActionType.SPECIAL;
+    }
+
+    public PulseAction(AbstractGameAction a, AbstractGameAction b, AbstractGameAction c) {
+        this.pulseAction = a;
+        this.pulseAction2 = b;
+        this.pulseAction3 = c;
         this.actionType = ActionType.SPECIAL;
     }
 
@@ -39,7 +50,14 @@ public class PulseAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
 
         if (!p.hasPower(makeID("PulseOff"))) {
+            if (p.hasPower(makeID("HopManeuvers"))) {
+                addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, p.getPower(makeID("HopManeuvers")).amount)));
+            }
+
             addToTop(new ApplyPowerAction(p, p, new PulseOffPower(p)));
+            if (pulseAction3 != null) {
+                addToTop(pulseAction3);
+            }
             if (pulseAction2 != null) {
                 addToTop(pulseAction2);
             }

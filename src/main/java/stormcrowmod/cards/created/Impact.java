@@ -3,6 +3,7 @@ package stormcrowmod.cards.created;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
+import stormcrowmod.actions.ReactionForceFollowupAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.powers.MomentumPower;
@@ -49,6 +51,11 @@ public class Impact extends BaseCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         int half_m_rounded_up = (int)Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
         addToBot(new ReducePowerAction(p,p, makeID("Momentum"), half_m_rounded_up));
+
+        if (p.hasPower(makeID("ReactionForce"))) {
+            addToBot(new ReactionForceFollowupAction(p));
+        }
+
     }
 
     @Override

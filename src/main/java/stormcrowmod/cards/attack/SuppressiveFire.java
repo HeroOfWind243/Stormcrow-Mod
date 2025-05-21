@@ -20,10 +20,10 @@ public class SuppressiveFire extends BaseCard {
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ALL_ENEMY,
-            1 //Can use -1 for X, or -2 for unplayable
+            2 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 5;
     private static final int UPG_DAMAGE = 1;
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 0;

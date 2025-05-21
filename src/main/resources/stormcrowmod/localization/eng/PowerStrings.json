@@ -54,5 +54,24 @@
       " #yInvert to your hand at the start of your turn.",
       " #yInverts to your hand at the start of your turn."
     ]
+  },
+  "${modID}:HopManeuvers": {
+    "NAME": "Hop Maneuvers",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yMomentum when you trigger a #yPulse effect."
+    ]
+  },
+  "${modID}:ReactionForce": {
+    "NAME": "Reaction Force",
+    "DESCRIPTIONS": [
+      "After playing an #yImpact, gain Block equal to #yMomentum"
+    ]
+  },
+  "${modID}:RunningStart": {
+    "NAME": "Running Start",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #yBlock equal to #yMomentum."
+    ]
   }
 }
