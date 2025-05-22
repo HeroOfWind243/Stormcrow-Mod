@@ -1,24 +1,18 @@
 package stormcrowmod.cards.attack;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
-import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateJumpAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.utility.ExhaustToHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
-import stormcrowmod.actions.ExhaustSelfAction;
+import stormcrowmod.actions.ExhaustCardAction;
 import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
@@ -58,7 +52,7 @@ public class SeismicToss extends BaseCard {
         addToBot(new WaitAction(0.8F));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
 
-        addToBot(new PulseAction(new StunMonsterAction(m, p), new ExhaustSelfAction(this)));
+        addToBot(new PulseAction(new StunMonsterAction(m, p), new ExhaustCardAction(this)));
 
     }
 

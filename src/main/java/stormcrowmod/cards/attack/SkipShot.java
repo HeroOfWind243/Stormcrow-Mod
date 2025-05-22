@@ -1,19 +1,15 @@
 package stormcrowmod.cards.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.cards.created.Skip;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
@@ -31,10 +27,14 @@ public class SkipShot extends BaseCard {
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 1;
 
+    private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = 1;
+
     public SkipShot() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC, UPG_MAGIC);
 
         tags.add(PilotTags.PULSE);
         cardsToPreview = new Skip();
@@ -42,8 +42,8 @@ public class SkipShot extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractCard card2 = new Skip();
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractCard card2 = new Skip(this.magicNumber);
 
         if (this.upgraded) {
             card2.upgrade();

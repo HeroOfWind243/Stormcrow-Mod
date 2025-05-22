@@ -73,5 +73,12 @@
     "DESCRIPTIONS": [
       "At the end of your turn, gain #yBlock equal to #yMomentum."
     ]
+  },
+  "${modID}:SpeedBoost": {
+    "NAME": "Speed Boost",
+    "DESCRIPTIONS": [
+      "When you draw a card during your turn, gain #b",
+      " #yMomentum."
+    ]
   }
 }

@@ -200,8 +200,22 @@
       " cards)."
     ]
   },
-  "${modID}:Skip Shot": {
+  "${modID}:SkipShot": {
     "NAME": "Skip Shot",
-    "DESCRIPTION": "Deal !D! damage.  ${modID}:Impulse !M!. NL End of turn, gain Block equal to ${modID}:Momentum. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Add a *Skip that does !M! more damage to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Add a *Skip+ that does !M! more damage to your hand."
+  },
+  "${modID}:Skip": {
+    "NAME": "Skip",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL ${modID}:Pulse: Add a *Skip that does !M! more damage to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Add a *Skip+ that does !M! more damage to your hand."
+  },
+  "${modID}:SpeedBoost": {
+    "NAME": "Speed Boost",
+    "DESCRIPTION": "When you draw a card during your turn, gain !M! ${modID}:Momentum."
+  },
+  "${modID}:ExhaustJets": {
+    "NAME": "Exhaust Jets",
+    "DESCRIPTION": "Exhaust 1 card. NL Gain !B! Block. NL If you exhausted a *Thruster, draw !M! cards."
   }
 }

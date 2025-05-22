@@ -1,19 +1,14 @@
 package stormcrowmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import stormcrowmod.powers.PulseOffPower;
 
-import static stormcrowmod.StormcrowMod.makeID;
-
-public class ExhaustSelfAction extends AbstractGameAction {
+public class ExhaustCardAction extends AbstractGameAction {
     private final AbstractCard c;
 
-    public ExhaustSelfAction(AbstractCard card) {
+    public ExhaustCardAction(AbstractCard card) {
         this.c = card;
         this.actionType = ActionType.EXHAUST;
     }

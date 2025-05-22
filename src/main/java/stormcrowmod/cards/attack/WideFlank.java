@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import stormcrowmod.actions.CreateThrusterAction;
+import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Thruster;
 import stormcrowmod.character.PilotCharacter;
@@ -39,7 +40,7 @@ public class WideFlank extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false)));
+        addToBot(new PulseAction(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false))));
     }
 
     @Override

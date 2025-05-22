@@ -18,7 +18,7 @@ public class CloseCall extends BaseCard {
     private static final CardStats info = new CardStats(
             PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1 //Can use -1 for X, or -2 for unplayable
     );
