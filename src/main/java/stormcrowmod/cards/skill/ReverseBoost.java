@@ -1,15 +1,14 @@
 package stormcrowmod.cards.skill;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import stormcrowmod.actions.PulseAction;
+import stormcrowmod.actions.CreateThrusterAction;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.cards.created.Thruster;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.util.CardStats;
-import stormcrowmod.util.PilotTags;
 
 public class ReverseBoost extends BaseCard {
     public static final String ID = makeID(ReverseBoost.class.getSimpleName()); //makeID ensures this is unique to this mod
@@ -22,24 +21,19 @@ public class ReverseBoost extends BaseCard {
     );
 
     private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 2;
-
-    private static final int MAGIC = 2;
+    private static final int UPG_BLOCK = 3;
 
     public ReverseBoost() {
         super(ID, info);
 
+        this.cardsToPreview = new Thruster();
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
-
-        tags.add(PilotTags.PULSE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new PulseAction(new DrawCardAction(p,this.magicNumber)));
+        addToBot(new CreateThrusterAction(1));
     }
 
     @Override

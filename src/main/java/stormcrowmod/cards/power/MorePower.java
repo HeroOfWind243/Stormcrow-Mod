@@ -21,8 +21,8 @@ public class MorePower extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 3;
+    private static final int UPG_MAGIC = 1;
 
     public MorePower() {
         super(ID, info);

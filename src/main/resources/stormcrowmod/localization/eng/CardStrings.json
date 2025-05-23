@@ -105,16 +105,16 @@
     "NAME": "Boost Kick",
     "DESCRIPTION": "Deal !D! damage. Shuffle a *Thruster into your draw pile."
   },
-  "${modID}:Agility": {
-    "NAME": "Agility",
+  "${modID}:ReverseBoost": {
+    "NAME": "Reverse Boost",
     "DESCRIPTION": "Gain !B! Block. Shuffle a *Thruster into your draw pile."
   },
   "${modID}:Afterburner": {
     "NAME": "Afterburner",
     "DESCRIPTION": "Draw !${modID}:baseDraw! cards.  If you draw any *Thrusters, draw !M! additional {@@}card{!M!|>1=s}."
   },
-  "${modID}:ReverseBoost": {
-    "NAME": "Reverse Boost",
+  "${modID}:Agility": {
+    "NAME": "Agility",
     "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Draw !M! cards."
   },
   "${modID}:ASuddenMoment": {

@@ -1,0 +1,132 @@
+
+skeleton.png
+size: 1024,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Shadow
+  rotate: false
+  xy: 1, 322
+  size: 615, 199
+  orig: 648, 233
+  offset: 18, 12
+  index: -1
+Backarm1
+  rotate: false
+  xy: 553, 813
+  size: 252, 105
+  orig: 252, 108
+  offset: 0, 2
+  index: -1
+FrontLeg
+  rotate: false
+  xy: 844, 1
+  size: 163, 292
+  orig: 163, 292
+  offset: 0, 0
+  index: -1
+Backarm2
+  rotate: false
+  xy: 807, 813
+  size: 201, 95
+  orig: 201, 95
+  offset: 0, 0
+  index: -1
+BackGun
+  rotate: false
+  xy: 350, 812
+  size: 201, 132
+  orig: 201, 132
+  offset: 0, 0
+  index: -1
+FrontFoot
+  rotate: false
+  xy: 213, 946
+  size: 138, 122
+  orig: 138, 122
+  offset: 0, 0
+  index: -1
+Jetpack
+  rotate: false
+  xy: 1, 523
+  size: 210, 463
+  orig: 210, 463
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 353, 946
+  size: 149, 108
+  orig: 149, 108
+  offset: 0, 0
+  index: -1
+Waist
+  rotate: false
+  xy: 1, 1
+  size: 445, 319
+  orig: 445, 319
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 618, 314
+  size: 312, 375
+  orig: 312, 375
+  offset: 0, 0
+  index: -1
+FrontKneepad
+  rotate: false
+  xy: 807, 910
+  size: 145, 124
+  orig: 145, 124
+  offset: 0, 0
+  index: -1
+BackLeg
+  rotate: false
+  xy: 213, 523
+  size: 135, 312
+  orig: 135, 312
+  offset: 0, 0
+  index: -1
+BackKneepad
+  rotate: false
+  xy: 213, 837
+  size: 97, 98
+  orig: 97, 98
+  offset: 0, 0
+  index: -1
+BackFoot
+  rotate: false
+  xy: 553, 920
+  size: 230, 109
+  orig: 230, 109
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 448, 1
+  size: 394, 311
+  orig: 394, 311
+  offset: 0, 0
+  index: -1
+FrontArm1
+  rotate: false
+  xy: 691, 691
+  size: 244, 120
+  orig: 244, 120
+  offset: 0, 0
+  index: -1
+Frontarm2
+  rotate: false
+  xy: 350, 691
+  size: 339, 119
+  orig: 339, 119
+  offset: 0, 0
+  index: -1
+FrontGun
+  rotate: false
+  xy: 350, 523
+  size: 240, 139
+  orig: 240, 139
+  offset: 0, 0
+  index: -1

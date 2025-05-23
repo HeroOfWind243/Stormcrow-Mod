@@ -3,10 +3,12 @@ package stormcrowmod.character;
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -121,7 +123,8 @@ public class PilotCharacter extends CustomPlayer {
     public PilotCharacter() {
         super(getNames()[0], Meta.STORMCROW_PILOT,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+//                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                new SpineAnimation(characterPath("idle/skeleton.atlas"), characterPath("idle/skeleton.json"), 5.25f));
 
         initializeClass(null,
                 SHOULDER_2,
@@ -134,6 +137,8 @@ public class PilotCharacter extends CustomPlayer {
         //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
+
+        AnimationState.TrackEntry e = state.setAnimation(0, "IDLE", true);
     }
 
     @Override
