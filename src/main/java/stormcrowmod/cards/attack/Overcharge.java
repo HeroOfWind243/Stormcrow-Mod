@@ -28,9 +28,9 @@ public class Overcharge extends BaseCard {
             2 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int DAMAGE = 23;
-    private static final int UPG_DAMAGE = 7;
-    private static final int MAGIC = 1;
+    private static final int DAMAGE = 20;
+    private static final int UPG_DAMAGE = 5;
+    private static final int MAGIC = 2;
 
     public Overcharge() {
         super(ID, info);

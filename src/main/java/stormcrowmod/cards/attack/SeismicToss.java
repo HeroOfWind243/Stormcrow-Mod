@@ -26,14 +26,14 @@ public class SeismicToss extends BaseCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ENEMY,
-            3 //Can use -1 for X, or -2 for unplayable
+            2 //Can use -1 for X, or -2 for unplayable
     );
 
     private static final int DAMAGE = 0;
 
     public SeismicToss() {
         super(ID, info);
-        setCostUpgrade(2);
+        setCostUpgrade(1);
         setDamage(DAMAGE);
         setMagic(0);
 
@@ -52,7 +52,7 @@ public class SeismicToss extends BaseCard {
         addToBot(new WaitAction(0.8F));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
 
-        addToBot(new PulseAction(new StunMonsterAction(m, p), new ExhaustCardAction(this)));
+        addToBot(new PulseAction(new ExhaustCardAction(this)));
 
     }
 

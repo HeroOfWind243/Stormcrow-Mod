@@ -78,7 +78,7 @@
   },
   "${modID}:SeismicToss": {
     "NAME": "Seismic Toss",
-    "DESCRIPTION": "Deal damage equal to your current ${modID}:Momentum. NL ${modID}:Pulse: Stun the enemy and Exhaust this card."
+    "DESCRIPTION": "Deal damage equal to your current ${modID}:Momentum. NL ${modID}:Pulse: Exhaust this card."
   },
   "${modID}:Glide": {
     "NAME": "Glide",
@@ -155,7 +155,8 @@
   },
   "${modID}:Invert": {
     "NAME": "Invert",
-    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL ${modID}:Pulse. NL Exhaust."
   },
   "${modID}:PulseWidthModulator": {
     "NAME": "PWM",
@@ -217,5 +218,26 @@
   "${modID}:ExhaustJets": {
     "NAME": "Exhaust Jets",
     "DESCRIPTION": "Exhaust 1 card. NL Gain !B! Block. NL If you exhausted a *Thruster, draw !M! cards."
+  },
+  "${modID}:PulseFrequency": {
+    "NAME": "Pulse Frequency",
+    "DESCRIPTION": "${modID}:Pulse: Deal !D! damage. NL ${modID}:Pulse: Deal !${modID}:damage2! damage twice. NL ${modID}:Pulse: Apply !M! Weak. NL ${modID}:Pulse: Draw !${modID}:magic2! cards."
+  },
+  "${modID}:Unburden": {
+    "NAME": "Unburden",
+    "DESCRIPTION": "Exhaust up to !M! {@@}card{!M!|>1=s} in your hand. NL Gain !${modID}:magic2! ${modID}:Momentum for each Exhausted card."
+  },
+  "${modID}:FocalPoint": {
+    "NAME": "Focal Point",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage !M! times."
+  },
+  "${modID}:ApexArc": {
+    "NAME": "Apex Arc",
+    "DESCRIPTION": "When you play a card this turn, gain !M! ${modID}:Momentum. NL Next turn, ${modID}:Impulse 1."
+  },
+  "${modID}:ShieldNova": {
+    "NAME": "Shield Nova",
+    "DESCRIPTION": "Deal damage to ALL enemies equal to your Block. NL ${modID}:Pulse: Lose all Block.",
+    "UPGRADE_DESCRIPTION": " NL (Deal !D! damage.)"
   }
 }

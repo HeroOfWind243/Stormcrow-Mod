@@ -57,7 +57,7 @@ public class PilotCharacter extends CustomPlayer {
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images
-        private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
+        private static final String CHAR_SELECT_BUTTON = characterPath("select/stormicon.png");
         private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
 
         //Character card images

@@ -80,5 +80,25 @@
       "When you draw a card during your turn, gain #b",
       " #yMomentum."
     ]
+  },
+  "${modID}:MomentumOnPlay": {
+    "NAME": "Extra Momentum",
+    "DESCRIPTIONS": [
+      "When you play a card this turn, gain #b",
+      " extra #yMomentum."
+    ]
+  },
+  "${modID}:NextTurnImpulse": {
+    "NAME": "Next Turn Impulse",
+    "DESCRIPTIONS": [
+      "At the start of the turn, gain #b",
+      " extra #yMomentum."
+    ]
+  },
+  "${modID}:Crater": {
+    "NAME": "Crater",
+    "DESCRIPTIONS": [
+      "Your next #yImpact this turn targets ALL enemies"
+    ]
   }
 }

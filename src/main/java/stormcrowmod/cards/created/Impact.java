@@ -46,6 +46,11 @@ public class Impact extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower(makeID("Crater"))) {
+
+        }
+
+
         if (m != null)
             addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
@@ -65,6 +70,14 @@ public class Impact extends BaseCard {
 
     @Override
     public void applyPowers() {
+        if (AbstractDungeon.player.hasPower(makeID("Crater"))) {
+            this.isMultiDamage = true;
+            this.target = CardTarget.ALL_ENEMY;
+        } else {
+            this.isMultiDamage = false;
+            this.target = CardTarget.ENEMY;
+        }
+
         int realBaseDamage = this.baseDamage;
         this.baseMagicNumber = this.currentMomentum(AbstractDungeon.player);
         this.baseDamage += this.baseMagicNumber;
@@ -75,6 +88,14 @@ public class Impact extends BaseCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
+        if (AbstractDungeon.player.hasPower(makeID("Crater"))) {
+            this.isMultiDamage = true;
+            this.target = CardTarget.ALL_ENEMY;
+        } else {
+            this.isMultiDamage = false;
+            this.target = CardTarget.ENEMY;
+        }
+
         this.baseMagicNumber = this.currentMomentum(AbstractDungeon.player);
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
