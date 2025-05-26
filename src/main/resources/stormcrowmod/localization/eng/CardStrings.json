@@ -239,5 +239,29 @@
     "NAME": "Shield Nova",
     "DESCRIPTION": "Deal damage to ALL enemies equal to your Block. NL ${modID}:Pulse: Lose all Block.",
     "UPGRADE_DESCRIPTION": " NL (Deal !D! damage.)"
+  },
+  "${modID}:Crater": {
+    "NAME": "Crater",
+    "DESCRIPTION": "Your next *Impact played this turn targets ALL enemies."
+  },
+  "${modID}:WristHolster": {
+    "NAME": "Wrist Holster",
+    "DESCRIPTION": "Put an Attack from your hand on top of your draw pile. NL It costs 0 until played. NL End your turn."
+  },
+  "${modID}:LoopAround": {
+    "NAME": "Loop Around",
+    "DESCRIPTION": "Draw !M! cards. NL For each Attack drawn, gain !${modID}:magic2! ${modID}:Momentum. NL Discard Skills drawn this way."
+  },
+  "${modID}:KineticGenerator": {
+    "NAME": "Kinetic Generator",
+    "DESCRIPTION": "Requires !${modID}:reqM! ${modID}:Momentum to play. NL Lose !${modID}:reqM! ${modID}:Momentum. NL Gain !M! Strength."
+  },
+  "${modID}:DragFlaps": {
+    "NAME": "Drag Flaps",
+    "DESCRIPTION": "Requires !M! ${modID}:Momentum to play. NL Lose !M! ${modID}:Momentum. NL Gain [E]. NL ${modID}:Pulse: Gain [E]"
+  },
+  "${modID}:ReThrust": {
+    "NAME": "Re-Thrust",
+    "DESCRIPTION": "Shuffle all *Thrusters in your discard pile into your draw pile. NL Draw !M! cards."
   }
 }

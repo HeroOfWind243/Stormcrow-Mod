@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.cards.created.Impact;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.powers.CraterPower;
 import stormcrowmod.powers.MomentumOnPlayPower;
@@ -25,6 +26,8 @@ public class Crater extends BaseCard {
         super(ID, info);
 
         setCostUpgrade(0);
+
+        this.cardsToPreview = new Impact();
     }
 
     @Override

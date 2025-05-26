@@ -3,6 +3,7 @@ package stormcrowmod.cards.created;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -41,22 +42,27 @@ public class Impact extends BaseCard {
         setMagic(0);
 
         tags.add(PilotTags.IMPACT);
-
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Crater Handler
         if (p.hasPower(makeID("Crater"))) {
-
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                addToBot(new VFXAction(new VerticalImpactEffect(mo.hb.cX + mo.hb.width / 4.0F, mo.hb.cY - mo.hb.height / 4.0F)));
+            }
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
+        else {
+            if (m != null)
+                addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
 
+        int half_m_rounded_up = (int) Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
+        addToBot(new ReducePowerAction(p, p, makeID("Momentum"), half_m_rounded_up));
 
-        if (m != null)
-            addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        int half_m_rounded_up = (int)Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
-        addToBot(new ReducePowerAction(p,p, makeID("Momentum"), half_m_rounded_up));
-
+        //Reaction Force Handler
         if (p.hasPower(makeID("ReactionForce"))) {
             addToBot(new ReactionForceFollowupAction(p));
         }
