@@ -46,7 +46,7 @@ public class FocalPoint extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
+            addToBot(new SFXAction("BLOCK_BREAK", 0.5f, true));
             addToBot(new VFXAction(p, new IntenseZoomEffect(m.hb.cX, m.hb.cY, false), 0.05F, true));
         }
 

@@ -100,5 +100,38 @@
     "DESCRIPTIONS": [
       "Your next #yImpact this turn targets ALL enemies"
     ]
+  },
+  "${modID}:ChargeThrusters": {
+    "NAME": "Charge Thrusters",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, add a Thruster to the top of your draw pile and gain [E] .",
+      "At the start of your next #b",
+      " turns, add a Thruster to the top of your draw pile and gain [E] ."
+    ]
+  },
+  "${modID}:Stalling": {
+    "NAME": "Stalling",
+    "DESCRIPTIONS": [
+      "At the start of next turn, gain #yMomentum equal to remaining #yBlock."
+    ]
+  },
+  "${modID}:Impulsive": {
+    "NAME": "Impulsive",
+    "DESCRIPTIONS": [
+      "Your #yImpacts gain #yEthereal, cost an additional [E] , and do double damage."
+    ]
+  },
+  "${modID}:PlowThrough": {
+    "NAME": "Plow Through",
+    "DESCRIPTIONS": [
+      "Your #yImpacts cost #b",
+      " less [E] ."
+    ]
+  },
+  "${modID}:FullStop": {
+    "NAME": "Full Stop",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose ALL #yMomentum."
+    ]
   }
 }

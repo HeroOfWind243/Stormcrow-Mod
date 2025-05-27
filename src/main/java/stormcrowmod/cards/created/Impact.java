@@ -22,26 +22,57 @@ import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
 
 public class Impact extends BaseCard {
+    private static final int BASE_COST = 1;
+
+
     public static final String ID = makeID(Impact.class.getSimpleName()); //makeID ensures this is unique to this mod
     private static final CardStats info = new CardStats(
             CardColor.COLORLESS,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
-            1 //Can use -1 for X, or -2 for unplayable
+            BASE_COST //Can use -1 for X, or -2 for unplayable
     );
 
     private static final int DAMAGE = 0;
     private static final int UPG_DAMAGE = 6;
 
+
+    private int dmgFactor = 1;
+
     public Impact() {
         super(ID, info);
-        setSelfRetain(true);
-        setExhaust(true);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(0);
 
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("Impulsive"))) {
+            this.costForTurn = BASE_COST + 1;
+            dmgFactor = 2;
+            this.setSelfRetain(false);
+            this.setEthereal(true);
+        } else {
+            dmgFactor = 1;
+            this.setSelfRetain(true);
+            this.setEthereal(false);
+        }
+
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("PlowThrough"))) {
+            this.costForTurn = this.costForTurn - AbstractDungeon.player.getPower(makeID("PlowThrough")).amount;
+            if (this.costForTurn < 0) {
+                this.costForTurn = 0;
+            }
+        }
+
+        if (this.costForTurn != BASE_COST) {
+            this.isCostModified = true;
+        }
+
+        setExhaust(true);
+
         tags.add(PilotTags.IMPACT);
+
+        updateDescription();
+
     }
 
     @Override
@@ -67,6 +98,8 @@ public class Impact extends BaseCard {
             addToBot(new ReactionForceFollowupAction(p));
         }
 
+        this.isCostModified = false;
+
     }
 
     @Override
@@ -84,12 +117,39 @@ public class Impact extends BaseCard {
             this.target = CardTarget.ENEMY;
         }
 
+        if (AbstractDungeon.player.hasPower(makeID("Impulsive"))) {
+            this.costForTurn = BASE_COST + 1;
+            dmgFactor = 2;
+            this.setSelfRetain(false);
+            this.setEthereal(true);
+        } else {
+            dmgFactor = 1;
+            this.setSelfRetain(true);
+            this.setEthereal(false);
+        }
+
+        if (AbstractDungeon.player.hasPower(makeID("PlowThrough"))) {
+            this.costForTurn = this.costForTurn - AbstractDungeon.player.getPower(makeID("PlowThrough")).amount;
+            if (this.costForTurn < 0) {
+                this.costForTurn = 0;
+            }
+        }
+
+        if (this.costForTurn != BASE_COST) {
+            this.isCostModified = true;
+        } else {
+            this.isCostModified = false;
+        }
+
         int realBaseDamage = this.baseDamage;
         this.baseMagicNumber = this.currentMomentum(AbstractDungeon.player);
         this.baseDamage += this.baseMagicNumber;
+        this.baseDamage *= dmgFactor;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = (this.damage != this.baseDamage);
+
+        updateDescription();
     }
 
     @Override
@@ -102,12 +162,28 @@ public class Impact extends BaseCard {
             this.target = CardTarget.ENEMY;
         }
 
+        if (AbstractDungeon.player.hasPower(makeID("Impulsive"))) {
+            this.costForTurn = BASE_COST + 1;
+            dmgFactor = 2;
+        } else {
+            dmgFactor = 1;
+        }
+
+        if (this.costForTurn != BASE_COST) {
+            this.isCostModified = true;
+        } else {
+            this.isCostModified = false;
+        }
+
         this.baseMagicNumber = this.currentMomentum(AbstractDungeon.player);
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
+        this.baseDamage *= dmgFactor;
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = (this.damage != this.baseDamage);
+
+        updateDescription();
     }
 
     private int currentMomentum(AbstractPlayer p) { //Check that avoids returning null if Momentum is not present
@@ -115,5 +191,14 @@ public class Impact extends BaseCard {
             return p.getPower(makeID("Momentum")).amount;
         }
         return 0;
+    }
+
+    private void updateDescription() {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("Impulsive"))) {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + cardStrings.DESCRIPTION;
+        } else {
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.DESCRIPTION;
+        }
+        initializeDescription();
     }
 }

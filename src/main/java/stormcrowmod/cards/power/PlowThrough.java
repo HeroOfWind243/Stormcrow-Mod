@@ -1,4 +1,4 @@
-package stormcrowmod.cards.skill;
+package stormcrowmod.cards.power;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,36 +7,33 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Impact;
 import stormcrowmod.character.PilotCharacter;
-import stormcrowmod.powers.CraterPower;
-import stormcrowmod.powers.MomentumOnPlayPower;
-import stormcrowmod.powers.NextTurnImpulsePower;
+import stormcrowmod.powers.ImpulsivePower;
+import stormcrowmod.powers.PlowThroughPower;
 import stormcrowmod.util.CardStats;
 
-public class Crater extends BaseCard {
-    public static final String ID = makeID(Crater.class.getSimpleName()); //makeID ensures this is unique to this mod
+public class PlowThrough extends BaseCard {
+    public static final String ID = makeID(PlowThrough.class.getSimpleName()); //makeID ensures this is unique to this mod
     private static final CardStats info = new CardStats(
             PilotCharacter.Meta.CARD_COLOR,
-            CardType.SKILL,
+            CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1 //Can use -1 for X, or -2 for unplayable
+            2 //Can use -1 for X, or -2 for unplayable
     );
 
-    public Crater() {
+    public PlowThrough() {
         super(ID, info);
-
-        setCostUpgrade(0);
-
-        this.cardsToPreview = new Impact();
+        setCostUpgrade(1);
+        cardsToPreview = new Impact();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CraterPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new PlowThroughPower(p, 1)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Crater();
+        return new PlowThrough();
     }
 }

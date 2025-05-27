@@ -1,19 +1,20 @@
 package stormcrowmod.cards.skill;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import stormcrowmod.cards.BaseCard;
-import stormcrowmod.cards.created.Impact;
 import stormcrowmod.character.PilotCharacter;
-import stormcrowmod.powers.CraterPower;
-import stormcrowmod.powers.MomentumOnPlayPower;
-import stormcrowmod.powers.NextTurnImpulsePower;
+import stormcrowmod.powers.StallingPower;
 import stormcrowmod.util.CardStats;
 
-public class Crater extends BaseCard {
-    public static final String ID = makeID(Crater.class.getSimpleName()); //makeID ensures this is unique to this mod
+public class Stalling extends BaseCard {
+    public static final String ID = makeID(Stalling.class.getSimpleName()); //makeID ensures this is unique to this mod
     private static final CardStats info = new CardStats(
             PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
@@ -22,21 +23,23 @@ public class Crater extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    public Crater() {
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 3;
+
+    public Stalling() {
         super(ID, info);
 
-        setCostUpgrade(0);
-
-        this.cardsToPreview = new Impact();
+        setBlock(BLOCK, UPG_BLOCK);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CraterPower(p, 1)));
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new StallingPower(p)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Crater();
+        return new Stalling();
     }
 }
