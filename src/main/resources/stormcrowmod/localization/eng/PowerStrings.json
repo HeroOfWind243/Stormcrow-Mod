@@ -133,5 +133,31 @@
     "DESCRIPTIONS": [
       "At the end of this turn, lose ALL #yMomentum."
     ]
+  },
+  "${modID}:LoseStrNextTurn": {
+    "NAME": "Delayed Strength Down",
+    "DESCRIPTIONS": [
+      "Lose #b",
+      " #yStrength at the end of your next turn."
+    ]
+  },
+  "${modID}:LoseDexNextTurn": {
+    "NAME": "Delayed Dexerity Down",
+    "DESCRIPTIONS": [
+      "Lose #b",
+      " #yDexerity at the end of your next turn."
+    ]
+  },
+  "${modID}:PulseThrusters": {
+    "NAME": "Pulse Thrusters",
+    "DESCRIPTIONS": [
+      "Your #yThrusters gain #yPulse: Gain 1 Temporary #yDexterity."
+    ]
+  },
+  "${modID}:UnstoppableForm": {
+    "NAME": "Unstoppable Form",
+    "DESCRIPTIONS": [
+      "Your #yImpacts no longer remove #yMomentum."
+    ]
   }
 }

@@ -1,5 +1,6 @@
 package stormcrowmod.cards.created;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,6 +8,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
@@ -26,7 +30,7 @@ public class Thruster extends BaseCard {
 
     public Thruster() {
         super(ID, info);
-        // TODO: Add checks for Pulse Thrusters here
+
         AbstractPower p = null;
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("MorePower"))) {
             p = AbstractDungeon.player.getPower(makeID("MorePower"));
@@ -38,7 +42,7 @@ public class Thruster extends BaseCard {
         }
         setBlock(BLOCK + bonus, UPG_BLOCK);
 
-        this.initializeDescription();
+        this.updateDescription();
 
         setExhaust(true);
         tags.add(PilotTags.THRUSTER);
@@ -47,14 +51,19 @@ public class Thruster extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, 1));
-        initializeDescription();
+
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("PulseThrusters"))) {
+            addToBot(new PulseAction(new ApplyPowerAction(p, p, new DexterityPower(p, 1)), new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1))));
+        }
+
+        updateDescription();
     }
 
     @Override
     public void triggerWhenDrawn() {
         this.applyPowers();
         addToTop(new GainBlockAction(AbstractDungeon.player, this.block, true));
-        initializeDescription();
+        updateDescription();
     }
 
     @Override
@@ -71,7 +80,16 @@ public class Thruster extends BaseCard {
             }
             super.applyPowers();
 
-            initializeDescription();
+        updateDescription();
+    }
+
+    public void updateDescription() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("PulseThrusters"))) {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+        }
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override

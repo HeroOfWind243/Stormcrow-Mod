@@ -1,21 +1,15 @@
 {
-  "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
-    "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
-    ]
-  },
   "${modID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
   "${modID}:Thruster": {
     "NAME": "Thruster",
-    "DESCRIPTION": "When drawn, gain !B! Block. NL Draw 1 card. NL Exhaust."
+    "DESCRIPTION": "On draw, gain !B! Block. NL Draw 1 card.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Exhaust.",
+      " NL ${modID}:Pulse: Gain 1 Temporary Dexterity."
+    ]
   },
   "${modID}:Defend": {
     "NAME": "Defend",
@@ -27,9 +21,11 @@
   },
   "${modID}:Impact": {
     "NAME": "Impact",
-    "DESCRIPTION": " NL Deal !D! damage. NL Lose half ${modID}:Momentum. NL Exhaust.",
+    "DESCRIPTION": " NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": ["Retain.",
-      "Ethereal."]
+      "Ethereal.",
+    " NL Lose half ${modID}:Momentum.",
+    " NL Exhaust."]
   },
   "${modID}:Takeoff": {
     "NAME": "Takeoff",
@@ -180,7 +176,7 @@
     "NAME": "Twin Thrusters",
     "DESCRIPTION": "Shuffle a *Thruster into your draw pile for each *Thruster in your hand.",
     "EXTENDED_DESCRIPTION": [
-      " NL (You have ",
+      " NL (Create ",
       " *Thruster).",
       " *Thrusters)."
       ]
@@ -294,5 +290,40 @@
   "${modID}:ImprovisedBarrage": {
     "NAME": "Improvised Barrage",
     "DESCRIPTION": "Discard your hand. NL Deal !D! damage per card discarded. NL Draw !M! cards."
+  },
+  "${modID}:RunningHot": {
+    "NAME": "Running Hot",
+    "DESCRIPTION": "Discard any number of cards. Gain [E] for each card discarded. NL Draw !M! cards. NL Exhaust."
+  },
+  "${modID}:HangInThere": {
+    "NAME": "Hang In There",
+    "DESCRIPTION": "Deal !D! damage twice. NL ${modID}:Pulse: Delay the loss of your Temporary Strength and Dexterity until next turn."
+  },
+  "${modID}:Reload": {
+    "NAME": "Reload",
+    "DESCRIPTION": "Retrieve !M! cards from your discard pile. NL Attacks give 1 Strength, Skills give 1 Dexterity, Powers give both."
+  },
+  "${modID}:MegaThruster": {
+    "NAME": "Mega Thruster",
+    "DESCRIPTION": "Deal !D! damage per *Thruster in your hand, draw, and discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " total *Thruster).",
+      " total *Thrusters)."
+      ]
+  },
+  "${modID}:BurstThruster": {
+    "NAME": "Burst Thruster",
+    "DESCRIPTION": "Exhaust ALL *Thrusters in your hand. NL Gain !M! Temporary Strength for each exhausted card.",
+    "UPGRADE_DESCRIPTION": "Play ALL *Thrusters in your hand. NL Gain !M! Temporary Strength for each played card."
+  },
+  "${modID}:PulseThrusters": {
+    "NAME": "Pulse Thrusters",
+    "DESCRIPTION": "Your *Thrusters gain ${modID}:Pulse: Gain 1 Temporary Dexterity."
+  },
+  "${modID}:UnstoppableForm": {
+    "NAME": "Unstoppable Form",
+    "DESCRIPTION": "Ethereal. NL Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!.",
+    "UPGRADE_DESCRIPTION": "Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!."
   }
 }

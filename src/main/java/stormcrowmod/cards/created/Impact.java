@@ -90,8 +90,11 @@ public class Impact extends BaseCard {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
 
-        int half_m_rounded_up = (int) Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
-        addToBot(new ReducePowerAction(p, p, makeID("Momentum"), half_m_rounded_up));
+        //Unstoppable Form Handler
+        if (!p.hasPower(makeID("UnstoppableForm"))) {
+            int half_m_rounded_up = (int) Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
+            addToBot(new ReducePowerAction(p, p, makeID("Momentum"), half_m_rounded_up));
+        }
 
         //Reaction Force Handler
         if (p.hasPower(makeID("ReactionForce"))) {
@@ -198,6 +201,11 @@ public class Impact extends BaseCard {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + cardStrings.DESCRIPTION;
         } else {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.DESCRIPTION;
+        }
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("UnstoppableForm"))) {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[3];
+        } else {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2] + cardStrings.EXTENDED_DESCRIPTION[3];
         }
         initializeDescription();
     }
