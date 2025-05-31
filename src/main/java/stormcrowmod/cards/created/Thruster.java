@@ -87,6 +87,9 @@ public class Thruster extends BaseCard {
         this.rawDescription = cardStrings.DESCRIPTION;
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(makeID("PulseThrusters"))) {
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+            if (!this.hasTag(PilotTags.PULSE)) {
+                this.tags.add(PilotTags.PULSE);
+            }
         }
         this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();

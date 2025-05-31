@@ -31,6 +31,7 @@ public class SkipABeat extends BaseCard {
         setExhaust(true, false);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
     }
 
     @Override

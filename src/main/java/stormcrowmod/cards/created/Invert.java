@@ -30,6 +30,7 @@ public class Invert extends BaseCard {
         setSelfRetain(false, true);
         tags.add(PilotTags.INVERT);
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
     }
 
     @Override

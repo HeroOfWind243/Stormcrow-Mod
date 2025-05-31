@@ -44,7 +44,7 @@
     "NAME": "Vulnerable Next Turn",
     "DESCRIPTIONS": [
       "Apply #b",
-      " #yVulnerable to all enemies next turn."
+      " #yVulnerable to ALL enemies next turn."
     ]
   },
   "${modID}:PulseWidthModulator": {
@@ -131,7 +131,7 @@
   "${modID}:FullStop": {
     "NAME": "Full Stop",
     "DESCRIPTIONS": [
-      "At the end of this turn, lose ALL #yMomentum."
+      "At the end of this turn, lose all #yMomentum."
     ]
   },
   "${modID}:LoseStrNextTurn": {

@@ -9,4 +9,6 @@ public class PilotTags {
     @SpireEnum public static AbstractCard.CardTags THRUSTER;
     @SpireEnum public static AbstractCard.CardTags PULSE;
     @SpireEnum public static AbstractCard.CardTags INVERT;
+    @SpireEnum public static AbstractCard.CardTags ANTIPULSE;
+    @SpireEnum public static AbstractCard.CardTags MULTIPULSE;
 }

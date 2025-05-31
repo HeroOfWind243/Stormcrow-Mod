@@ -38,6 +38,7 @@ public class SeismicToss extends BaseCard {
         setMagic(0);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
 
     }
 

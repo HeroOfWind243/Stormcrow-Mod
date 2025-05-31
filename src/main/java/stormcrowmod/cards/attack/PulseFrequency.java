@@ -52,6 +52,7 @@ public class PulseFrequency extends BaseCard {
         setCustomVar("magic2", MAGIC_2, UPG_MAGIC_2);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.MULTIPULSE);
     }
 
     @Override

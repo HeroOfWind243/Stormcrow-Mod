@@ -2,14 +2,19 @@ package stormcrowmod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.helpers.CardBorderGlowManager;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
+import stormcrowmod.powers.PulseOffPower;
 import stormcrowmod.relics.BaseRelic;
 import stormcrowmod.util.GeneralUtils;
 import stormcrowmod.util.KeywordInfo;
+import stormcrowmod.util.PilotTags;
 import stormcrowmod.util.TextureLoader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
@@ -76,6 +81,71 @@ public class StormcrowMod implements
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        //I think this is a good spot to make the universal glow borders?
+
+        // Pulse Normal
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                boolean playerCheck = AbstractDungeon.player != null && !AbstractDungeon.player.hasPower(PulseOffPower.POWER_ID);
+                boolean cardCheck = abstractCard.hasTag(PilotTags.PULSE) && !abstractCard.hasTag(PilotTags.ANTIPULSE);
+
+                return (playerCheck && cardCheck);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                return Color.ORANGE.cpy();
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("Pulse");
+            }
+        });
+
+        // Pulses that are bad to trigger (Anti-pulse)
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                boolean playerCheck = AbstractDungeon.player != null && AbstractDungeon.player.hasPower(PulseOffPower.POWER_ID);
+                boolean cardCheck = abstractCard.hasTag(PilotTags.PULSE) && abstractCard.hasTag(PilotTags.ANTIPULSE);
+
+                return (playerCheck && cardCheck);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                return Color.RED.cpy();
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("AntiPulse");
+            }
+        });
+
+        // Pulses that have multiple options, specifically the second set of options
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                boolean playerCheck = AbstractDungeon.player != null && AbstractDungeon.player.hasPower(PulseOffPower.POWER_ID);
+                boolean cardCheck = abstractCard.hasTag(PilotTags.PULSE) && abstractCard.hasTag(PilotTags.MULTIPULSE);
+
+                return (playerCheck && cardCheck);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                return Color.MAGENTA.cpy();
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("MultiPulse");
+            }
+        });
     }
 
     /*----------Localization----------*/

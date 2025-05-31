@@ -39,6 +39,7 @@ public class Overcharge extends BaseCard {
         setMagic(MAGIC);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
     }
 
     @Override

@@ -39,6 +39,7 @@ public class SwitchUp extends BaseCard {
         setCustomVar("Block2", BLOCK_2);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.MULTIPULSE);
     }
 
     @Override

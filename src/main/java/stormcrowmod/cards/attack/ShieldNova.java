@@ -43,6 +43,7 @@ public class ShieldNova extends BaseCard {
         this.isMultiDamage = true;
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
     }
 
     @Override

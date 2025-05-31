@@ -136,7 +136,7 @@
   },
   "${modID}:SeekHigherGround": {
     "NAME": "Seek Higher Ground",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, apply !M! Vulnerable to all enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, apply !M! Vulnerable to ALL enemies."
   },
   "${modID}:RunAndGun": {
     "NAME": "Run And Gun",
@@ -259,7 +259,7 @@
   },
   "${modID}:ReThrust": {
     "NAME": "Re-Thrust",
-    "DESCRIPTION": "Shuffle all *Thrusters in your discard pile into your draw pile. NL Draw !M! cards."
+    "DESCRIPTION": "Shuffle ALL *Thrusters in your discard pile into your draw pile. NL Draw !M! cards."
   },
   "${modID}:ChargeThrusters": {
     "NAME": "Charge Thrusters",

@@ -35,6 +35,7 @@ public class CloseCall extends BaseCard {
         setMagic(MAGIC);
 
         tags.add(PilotTags.PULSE);
+        tags.add(PilotTags.ANTIPULSE);
     }
 
     @Override
