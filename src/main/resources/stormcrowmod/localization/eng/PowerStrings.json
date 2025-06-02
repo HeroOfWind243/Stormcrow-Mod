@@ -184,5 +184,11 @@
       " its #yBlock to ALL enemies.",
       " #b"
     ]
+  },
+  "${modID}:StasisShield": {
+    "NAME": "Stasis Shield",
+    "DESCRIPTIONS": [
+      "Next turn, gain #yBlock equal to your total #yBlock this turn. NL You cannot gain additional #yBlock next turn."
+    ]
   }
 }

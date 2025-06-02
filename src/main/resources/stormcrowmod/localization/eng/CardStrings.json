@@ -342,5 +342,26 @@
   "${modID}:ScorchThrusters": {
     "NAME": "Scorch Thrusters",
     "DESCRIPTION": "When you play a *Thruster, deal damage equal to its Block to ALL enemies."
+  },
+  "${modID}:Dodge": {
+    "NAME": "Dodge",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Pulse: Add a *Real *Dodge to your hand. NL Exhaust."
+  },
+  "${modID}:RealDodge": {
+    "NAME": "Real Dodge",
+    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse: Add a *Perfection to your hand. NL Exhaust."
+  },
+  "${modID}:Perfection": {
+    "NAME": "Perfection",
+    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse: Gain 1 Intangible. NL Exhaust."
+  },
+  "${modID}:StasisShield": {
+    "NAME": "Stasis Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, your total Block will equal your total Block this turn."
+  },
+  "${modID}:Shattercrash": {
+    "NAME": "Shattercrash",
+    "DESCRIPTION": "Exhaust an *Impact in your hand. NL Deal its damage X times. NL Lose half ${modID}:Momentum.",
+    "UPGRADE_DESCRIPTION": "Exhaust an *Impact in your hand. NL Deal its damage X+1 times. NL Lose half ${modID}:Momentum."
   }
 }
