@@ -325,5 +325,22 @@
     "NAME": "Unstoppable Form",
     "DESCRIPTION": "Ethereal. NL Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!.",
     "UPGRADE_DESCRIPTION": "Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!."
+  },
+  "${modID}:RechargeShields": {
+    "NAME": "Recharge Shields",
+    "DESCRIPTION": "At the end of this turn, lose half Block. NL Next turn, gain an *Empower. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "At the end of this turn, lose half Block. NL Next turn, gain an *Empower+. NL Exhaust."
+  },
+  "${modID}:Empower": {
+    "NAME": "Empower",
+    "DESCRIPTION": "Ethereal. NL Gain !M! Strength. NL Gain !M! Dexterity."
+  },
+  "${modID}:Oscillation": {
+    "NAME": "Oscillation",
+    "DESCRIPTION": "The next {!M!|>1=two }{@@}time{!M!|>1=s} you play a ${modID}:Pulse card, ${modID}:Pulse, then play it again."
+  },
+  "${modID}:ScorchThrusters": {
+    "NAME": "Scorch Thrusters",
+    "DESCRIPTION": "When you play a *Thruster, deal damage equal to its Block to ALL enemies."
   }
 }

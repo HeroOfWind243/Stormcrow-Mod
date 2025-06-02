@@ -117,7 +117,7 @@ public class StormcrowMod implements
 
             @Override
             public Color getColor(AbstractCard abstractCard) {
-                return Color.RED.cpy();
+                return Color.ORANGE.cpy();
             }
 
             @Override
@@ -138,7 +138,7 @@ public class StormcrowMod implements
 
             @Override
             public Color getColor(AbstractCard abstractCard) {
-                return Color.MAGENTA.cpy();
+                return Color.GREEN.cpy();
             }
 
             @Override

@@ -1,4 +1,4 @@
-package stormcrowmod.damagemod;
+package stormcrowmod.cardmods;
 
 import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;

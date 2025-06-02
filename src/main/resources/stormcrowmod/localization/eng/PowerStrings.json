@@ -159,5 +159,30 @@
     "DESCRIPTIONS": [
       "Your #yImpacts no longer remove #yMomentum."
     ]
+  },
+  "${modID}:RechargeShields": {
+    "NAME": "Recharge Shields",
+    "DESCRIPTIONS": [
+      "At the end of turn, lose #bhalf #yBlock. NL Next turn, gain an #yEmpower",
+      ".",
+      "+."
+    ]
+  },
+  "${modID}:Oscillation": {
+    "NAME": "Oscillation",
+    "DESCRIPTIONS": [
+      "The next #b",
+      " you play a #yPulse card, #yPulse, then play it again.",
+      " time",
+      " times"
+    ]
+  },
+  "${modID}:ScorchThrusters": {
+    "NAME": "Scorch Thrusters",
+    "DESCRIPTIONS": [
+      "When you play a #yThruster, deal damage equal to",
+      " its #yBlock to ALL enemies.",
+      " #b"
+    ]
   }
 }
