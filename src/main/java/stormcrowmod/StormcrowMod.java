@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
+import stormcrowmod.potions.BasePotion;
 import stormcrowmod.powers.PulseOffPower;
 import stormcrowmod.relics.BaseRelic;
 import stormcrowmod.util.GeneralUtils;
@@ -73,6 +74,9 @@ public class StormcrowMod implements
 
     @Override
     public void receivePostInitialize() {
+
+        registerPotions();
+
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.
@@ -233,6 +237,18 @@ public class StormcrowMod implements
         {
             keywords.put(info.ID, info);
         }
+    }
+
+    public static void registerPotions() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BasePotion.class) //In the same package as this class
+                .any(BasePotion.class, (info, potion) -> { //Run this code for any classes that extend this class
+                    //These three null parameters are colors.
+                    //If they're not null, they'll overwrite whatever color is set in the potions themselves.
+                    //This is an old feature added before having potions determine their own color was possible.
+                    BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                    //playerClass will make a potion character-specific. By default, it's null and will do nothing.
+                });
     }
 
     //These methods are used to generate the correct filepaths to various parts of the resources folder.

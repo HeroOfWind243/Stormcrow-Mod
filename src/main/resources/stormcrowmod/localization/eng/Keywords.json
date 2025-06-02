@@ -21,6 +21,7 @@
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
   },
   {
+    "ID": "momentum",
     "PROPER_NAME": "Momentum",
     "NAMES": [
       "momentum"
@@ -28,6 +29,7 @@
     "DESCRIPTION": "A buff that scales the amount of damage #yImpact does. Increases when you play cards, decreases when you lose HP."
   },
   {
+    "ID": "impulse",
     "PROPER_NAME": "Impulse",
     "NAMES": [
       "impulse"
@@ -35,6 +37,7 @@
     "DESCRIPTION": "Grants #yMomentum equal to the amount. Add an #yImpact to your hand if you do not have one."
   },
   {
+    "ID": "pulse",
     "PROPER_NAME": "Pulse",
     "NAMES": [
       "pulse"
