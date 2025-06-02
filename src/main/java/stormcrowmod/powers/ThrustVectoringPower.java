@@ -19,7 +19,7 @@ public class ThrustVectoringPower extends BasePower {
     @Override
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         int cardAmount = AbstractDungeon.player.hand.group.size();
-        addToBot(new GainBlockAction(this.owner, this.owner, cardAmount * amount));
+        //addToBot(new GainBlockAction(this.owner, this.owner, cardAmount * amount));
         addToBot(new ApplyPowerAction(this.owner, this.owner, new MomentumPower(this.owner, cardAmount * amount)));
         this.updateDescription();
     }

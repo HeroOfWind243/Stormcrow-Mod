@@ -21,7 +21,7 @@
   "${modID}:ThrustVectoring": {
     "NAME": "Thrust Vectoring",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain #yMomentum and #yBlock equal to ",
+      "At the end of your turn, gain #yMomentum equal to ",
       "the amount of cards left in your hand.",
       " times "
     ]

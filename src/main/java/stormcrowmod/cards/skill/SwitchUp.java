@@ -37,6 +37,7 @@ public class SwitchUp extends BaseCard {
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(MAGIC, UPG_MAGIC);
         setCustomVar("Block2", BLOCK_2);
+        calculateVarAsBlock("Block2");
 
         tags.add(PilotTags.PULSE);
         tags.add(PilotTags.MULTIPULSE);
@@ -44,13 +45,19 @@ public class SwitchUp extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        calculateVarAsBlock("Block2");
         addToBot(new GainBlockAction(p, customVar("Block2")));
         addToBot(new PulseAction(
                 new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)),
                 new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber))));
         addToBot(new PulseAction(new GainBlockAction(p, this.block)));
         addToBot(new PulseAction());
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        calculateVarAsBlock("Block2");
     }
 
     @Override

@@ -32,6 +32,7 @@ public class StasisShieldPower extends BasePower implements NonStackablePower {
     public void atStartOfTurn() {
         addToTop(new ApplyPowerAction(owner, owner, new NoBlockPower(owner, 1, false)));
         addToTop(new GainBlockAction(owner, stasisBlock));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override

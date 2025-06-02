@@ -21,7 +21,7 @@ public class SkipShot extends BaseCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            0 //Can use -1 for X, or -2 for unplayable
+            1 //Can use -1 for X, or -2 for unplayable
     );
 
     private static final int DAMAGE = 3;

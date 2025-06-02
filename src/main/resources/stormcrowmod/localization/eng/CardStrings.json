@@ -61,8 +61,8 @@
   },
   "${modID}:ThrustVectoring": {
     "NAME": "Thrust Vectoring",
-    "DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum and Block equal to the remaining cards in your hand.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum and Block equal to twice the remaining cards in your hand."
+    "DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum equal to the remaining cards in your hand.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, gain ${modID}:Momentum equal to twice the remaining cards in your hand."
   },
   "${modID}:Prechargers": {
     "NAME": "Prechargers",
@@ -277,7 +277,7 @@
   },
   "${modID}:PlowThrough": {
     "NAME": "Plow Through",
-    "DESCRIPTION": "*Impacts cost 1 less [E] ."
+    "DESCRIPTION": "*Impact cost 1 less [E] ."
   },
   "${modID}:HighJumpKick": {
     "NAME": "High Jump Kick",
