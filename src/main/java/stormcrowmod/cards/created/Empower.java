@@ -27,7 +27,7 @@ public class Empower extends BaseCard implements NonStackablePower {
             0 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 4;
     private static final int UPG_MAGIC = 2;
 
     public Empower() {

@@ -25,7 +25,7 @@ public class Thruster extends BaseCard {
             0 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 2;
     private static final int UPG_BLOCK = 2;
 
     public Thruster() {

@@ -45,8 +45,7 @@ public class HangInThere extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
-        addToBot(new PulseAction(new DelayTempStrDexAction(p)));
+        addToBot(new DelayTempStrDexAction(p));
     }
 
     @Override

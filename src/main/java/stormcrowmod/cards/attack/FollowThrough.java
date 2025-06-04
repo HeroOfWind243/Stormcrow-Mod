@@ -37,7 +37,7 @@ public class FollowThrough extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(m, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.magicNumber)));
     }
 
     @Override

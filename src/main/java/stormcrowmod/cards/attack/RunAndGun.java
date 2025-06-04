@@ -29,19 +29,20 @@ public class RunAndGun extends BaseCard {
     );
 
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 9;
+    private static final int UPG_DAMAGE = 2;
 
     public RunAndGun() {
         super(ID, info);
 
-        this.cardsToPreview = new Thruster();
         setDamage(DAMAGE, UPG_DAMAGE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Consumer<Integer> damageDealt = b -> {
-            addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, b)));
+            if (b > 0) {
+                addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, b)));
+            }
         };
         
         addToBot(new DamageCallbackAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL, damageDealt));

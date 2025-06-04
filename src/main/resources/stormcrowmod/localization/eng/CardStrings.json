@@ -297,7 +297,7 @@
   },
   "${modID}:HangInThere": {
     "NAME": "Hang In There",
-    "DESCRIPTION": "Deal !D! damage twice. NL ${modID}:Pulse: Delay the loss of your Temporary Strength and Dexterity until next turn."
+    "DESCRIPTION": "Deal !D! damage twice. NL Delay the loss of your Temporary Strength and Dexterity until next turn."
   },
   "${modID}:Reload": {
     "NAME": "Reload",
