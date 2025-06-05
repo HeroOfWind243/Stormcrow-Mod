@@ -9,7 +9,7 @@
     "NAME": "Momentum",
     "DESCRIPTIONS": [
       "#yImpact deals #b",
-      " damage. Increases when you play cards, decreases when you lose HP."
+      " damage. Gain #b2 when you play a card, lose #bhalf at the end of your turn."
     ]
   },
   "${modID}:PulseOff": {
@@ -157,7 +157,8 @@
   "${modID}:UnstoppableForm": {
     "NAME": "Unstoppable Form",
     "DESCRIPTIONS": [
-      "Your #yImpacts no longer remove #yMomentum."
+      "At the start of your turn, #yImpulse #b",
+      "."
     ]
   },
   "${modID}:RechargeShields": {

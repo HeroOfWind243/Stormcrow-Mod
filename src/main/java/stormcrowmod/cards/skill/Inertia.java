@@ -41,8 +41,8 @@ public class Inertia extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, this.block));
         initializeDescription();
-        int half_m_rounded_up = (int)Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
-        addToBot(new ReducePowerAction(p,p, makeID("Momentum"), half_m_rounded_up));
+//        int half_m_rounded_up = (int)Math.ceil(this.currentMomentum(AbstractDungeon.player) / 2.0);
+//        addToBot(new ReducePowerAction(p,p, makeID("Momentum"), half_m_rounded_up));
     }
 
     @Override

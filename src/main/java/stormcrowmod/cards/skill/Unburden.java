@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import stormcrowmod.actions.ExhaustCardAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Thruster;
@@ -29,9 +31,9 @@ public class Unburden extends BaseCard {
     );
 
     private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
-    private static final int MAGIC_2 = 5;
+    private static final int MAGIC_2 = 4;
     private static final int UPG_MAGIC_2 = 0;
 
     public Unburden() {
@@ -46,7 +48,8 @@ public class Unburden extends BaseCard {
 
         Consumer<List<AbstractCard>> card = list -> {
             for (AbstractCard c : list) {
-                addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, customVar("magic2"))));
+                addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, customVar("magic2"))));
+                addToTop(new ApplyPowerAction(p, p, new LoseStrengthPower(p, customVar("magic2"))));
                 addToTop(new ExhaustCardAction(c));
             }
         };

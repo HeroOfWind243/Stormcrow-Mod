@@ -54,10 +54,10 @@ public class Shattercrash extends BaseCard {
 
         addToBot(new SelectCardsInHandAction(1, "Exhaust", false, false, filter, card));
 
-        if (p.hasPower(makeID("Momentum"))) {
-            int half_m_rounded_up = (int) Math.ceil(p.getPower(makeID("Momentum")).amount / 2.0);
-            addToBot(new ReducePowerAction(p, p, makeID("Momentum"), half_m_rounded_up));
-        }
+//        if (p.hasPower(makeID("Momentum"))) {
+//            int half_m_rounded_up = (int) Math.ceil(p.getPower(makeID("Momentum")).amount / 2.0);
+//            addToBot(new ReducePowerAction(p, p, makeID("Momentum"), half_m_rounded_up));
+//        }
 
     }
 

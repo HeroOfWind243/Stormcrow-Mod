@@ -24,8 +24,8 @@ public class SeekHigherGround extends BaseCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
-    private static final int BLOCK = 12;
-    private static final int UPG_BLOCK = 4;
+    private static final int BLOCK = 13;
+    private static final int UPG_BLOCK = 3;
 
     public SeekHigherGround() {
         super(ID, info);

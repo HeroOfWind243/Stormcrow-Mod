@@ -22,8 +22,8 @@ public class ASuddenMoment extends BaseCard {
             0 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 5;
+    private static final int MAGIC = 5;
+    private static final int UPG_MAGIC = 3;
 
     public ASuddenMoment() {
         super(ID, info);

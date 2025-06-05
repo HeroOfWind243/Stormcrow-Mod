@@ -25,12 +25,13 @@ public class UnstoppableForm extends BaseCard {
             3 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 8;
+    private static final int MAGIC = 5;
+    private static final int UPG_MAGIC = 3;
 
     public UnstoppableForm() {
         super(ID, info);
         setEthereal(true, false);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
         cardsToPreview = new Impact();
         this.tags.add(BaseModCardTags.FORM);
     }
@@ -38,8 +39,8 @@ public class UnstoppableForm extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("RAGE"));
-        addToBot(new ApplyPowerAction(p, p, new UnstoppablePower(p)));
-        addToBot(new ImpulseAction(p, this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new UnstoppablePower(p, this.magicNumber)));
+//        addToBot(new ImpulseAction(p, this.magicNumber));
     }
 
     @Override
