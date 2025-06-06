@@ -31,7 +31,7 @@ public class Perfection extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new PulseAction(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p,1))));
+        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p,1)));
     }
 
     @Override

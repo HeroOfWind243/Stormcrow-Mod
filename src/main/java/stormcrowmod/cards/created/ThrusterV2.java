@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
+import stormcrowmod.powers.KillThrusterPower;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
 
@@ -55,14 +56,21 @@ public class ThrusterV2 extends BaseCard {
 
         AbstractPlayer p = AbstractDungeon.player;
 
+        this.grantBuffs(p);
+
+        if (!p.hasPower(KillThrusterPower.POWER_ID)) {
+            addToBot(new DiscardSpecificCardAction(this));
+            addToBot(new DrawCardAction(p, 1));
+        }
+
+    }
+
+    public void grantBuffs(AbstractPlayer p) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber, true));
         addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber, true));
 
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, customVar("dagic")), customVar("dagic"), true));
         addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, customVar("dagic")), customVar("dagic"), true));
-
-        addToBot(new DiscardSpecificCardAction(this));
-        addToBot(new DrawCardAction(p, 1));
     }
 
     @Override

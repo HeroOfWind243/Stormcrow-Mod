@@ -52,8 +52,9 @@ public class RunningHot extends BaseCard {
             }
             addToTop(new VFXAction(new AdrenalineEffect()));
         };
-        addToBot(new SelectCardsInHandAction(99,"Discard",true, true, c -> true, cards));
         addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new SelectCardsInHandAction(99,"Discard",true, true, c -> true, cards));
+
     }
 
     @Override

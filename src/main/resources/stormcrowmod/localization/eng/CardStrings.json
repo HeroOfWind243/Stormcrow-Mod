@@ -95,7 +95,7 @@
   },
   "${modID}:MorePower": {
     "NAME": "More Power",
-    "DESCRIPTION": "*Thrusters grant !M! additional Block when drawn."
+    "DESCRIPTION": "*Thrusters grant !M! additional Temporary Strength when drawn."
   },
   "${modID}:Inertia": {
   "NAME": "Inertia",
@@ -171,7 +171,7 @@
   },
   "${modID}:HopManeuvers": {
     "NAME": "Hop Maneuvers",
-    "DESCRIPTION": "Gain !M! ${modID}:Momentum when you trigger a ${modID}:Pulse effect."
+    "DESCRIPTION": "Gain !M! Block when you trigger a ${modID}:Pulse effect."
   },
   "${modID}:ReactionForce": {
     "NAME": "Reaction Force",
@@ -179,9 +179,9 @@
   },
   "${modID}:TwinThrusters": {
     "NAME": "Twin Thrusters",
-    "DESCRIPTION": "Shuffle a *Thruster into your draw pile for each *Thruster in your hand.",
+    "DESCRIPTION": "Exhaust *Thrusters in your discard up to *Thrusters in your draw pile. NL Upgrade a *Thruster per exhausted card.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Create ",
+      " NL (Upgrade ",
       " *Thruster).",
       " *Thrusters)."
       ]
@@ -192,7 +192,7 @@
   },
   "${modID}:RunningStart": {
     "NAME": "Running Start",
-    "DESCRIPTION": "Innate. NL ${modID}:Impulse !M!. NL End of turn, gain Block equal to ${modID}:Momentum. NL Exhaust."
+    "DESCRIPTION": "Innate. NL ${modID}:Impulse !M!. NL Exhaust."
   },
   "${modID}:Coasting": {
     "NAME": "Coasting",
@@ -298,7 +298,7 @@
   },
   "${modID}:RunningHot": {
     "NAME": "Running Hot",
-    "DESCRIPTION": "Discard any number of cards. Gain [E] for each card discarded. NL Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Discard any number of cards. Gain [E] for each card discarded. NL Exhaust."
   },
   "${modID}:HangInThere": {
     "NAME": "Hang In There",
@@ -319,8 +319,13 @@
   },
   "${modID}:BurstThruster": {
     "NAME": "Burst Thruster",
-    "DESCRIPTION": "Exhaust ALL *Thrusters in your hand. NL Gain !M! Temporary Strength for each exhausted card.",
-    "UPGRADE_DESCRIPTION": "Play ALL *Thrusters in your hand. NL Gain !M! Temporary Strength for each played card."
+    "DESCRIPTION": "Exhaust ALL *Thrusters in your draw pile, gaining their buffs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust ALL *Thrusters in your draw pile, gaining their buffs.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Thruster).",
+      " Thrusters)."
+    ]
   },
   "${modID}:PulseThrusters": {
     "NAME": "Pulse Thrusters",
@@ -328,8 +333,7 @@
   },
   "${modID}:UnstoppableForm": {
     "NAME": "Unstoppable Form",
-    "DESCRIPTION": "Ethereal. NL Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!.",
-    "UPGRADE_DESCRIPTION": "Your *Impacts no longer remove ${modID}:Momentum. NL ${modID}:Impulse !M!."
+    "DESCRIPTION": "At the start of your turn ${modID}:Impulse !M!."
   },
   "${modID}:RechargeShields": {
     "NAME": "Recharge Shields",
@@ -358,7 +362,7 @@
   },
   "${modID}:Perfection": {
     "NAME": "Perfection",
-    "DESCRIPTION": "Ethereal. NL ${modID}:Pulse: Gain 1 Intangible. NL Exhaust."
+    "DESCRIPTION": "Ethereal. Gain 1 Intangible. NL Exhaust."
   },
   "${modID}:StasisShield": {
     "NAME": "Stasis Shield",

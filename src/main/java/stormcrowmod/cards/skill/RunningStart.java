@@ -24,8 +24,8 @@ public class RunningStart extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 3;
+    private static final int MAGIC = 8;
+    private static final int UPG_MAGIC = 4;
 
     public RunningStart() {
         super(ID, info);
@@ -40,7 +40,7 @@ public class RunningStart extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new ImpulseAction(p, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new RunningStartPower(p)));
+//        addToBot(new ApplyPowerAction(p, p, new RunningStartPower(p)));
     }
 
     @Override

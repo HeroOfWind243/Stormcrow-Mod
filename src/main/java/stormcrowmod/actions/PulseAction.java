@@ -2,6 +2,7 @@ package stormcrowmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -51,7 +52,7 @@ public class PulseAction extends AbstractGameAction {
 
         if (!p.hasPower(makeID("PulseOff"))) {
             if (p.hasPower(makeID("HopManeuvers"))) {
-                addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, p.getPower(makeID("HopManeuvers")).amount)));
+                addToTop(new GainBlockAction(p, p.getPower(makeID("HopManeuvers")).amount));
             }
 
             addToTop(new ApplyPowerAction(p, p, new PulseOffPower(p)));

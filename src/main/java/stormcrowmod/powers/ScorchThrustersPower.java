@@ -24,18 +24,13 @@ public class ScorchThrustersPower extends BasePower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(PilotTags.THRUSTER)) {
             flash();
-            int dmg = card.block * amount;
+            int dmg = amount;
             addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(dmg,false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
 
     @Override
     public void updateDescription() {
-        if (amount > 1) {
-            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + amount + " times" + DESCRIPTIONS[1];
-        } else {
-            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
-        }
-
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 }

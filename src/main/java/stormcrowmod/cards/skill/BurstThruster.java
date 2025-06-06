@@ -1,21 +1,30 @@
 package stormcrowmod.cards.skill;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import stormcrowmod.actions.BurstThrusterAction;
 import stormcrowmod.actions.ExhaustCardAction;
+import stormcrowmod.actions.ShowAndBurnCardsAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Thruster;
+import stormcrowmod.cards.created.ThrusterV2;
 import stormcrowmod.character.PilotCharacter;
+import stormcrowmod.powers.KillThrusterPower;
 import stormcrowmod.util.CardStats;
 import stormcrowmod.util.PilotTags;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class BurstThruster extends BaseCard {
     public static final String ID = makeID(BurstThruster.class.getSimpleName()); //makeID ensures this is unique to this mod
@@ -34,12 +43,63 @@ public class BurstThruster extends BaseCard {
 
         setMagic(MAGIC);
 
+        setExhaust(true, false);
+
         cardsToPreview = new Thruster();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BurstThrusterAction(p, this.magicNumber, this.upgraded));
+
+        Predicate<AbstractCard> filter = c -> c.hasTag(PilotTags.THRUSTER);
+
+        Consumer<List<AbstractCard>> buffs = c -> {
+            for (AbstractCard t : c) {
+                if (t instanceof ThrusterV2) {
+                    t.applyPowers();
+                }
+            }
+            addToBot(new ShowAndBurnCardsAction(c));
+            for (AbstractCard t : c) {
+                if (t instanceof ThrusterV2) {
+                    ((ThrusterV2)t).grantBuffs(p);
+                }
+            }
+        };
+
+        addToBot(new ApplyPowerAction(p, p, new KillThrusterPower(p)));
+        addToBot(new MoveCardsAction(p.exhaustPile, p.drawPile, filter, 99, buffs));
+        addToBot(new RemoveSpecificPowerAction(p, p, KillThrusterPower.POWER_ID));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+            if (c.hasTag(PilotTags.THRUSTER)) {
+                count++;
+            }
+        }
+        if (this.upgraded) {
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        } else {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        }
+
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + count;
+        if (count == 1) {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+        initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
     }
 
     @Override

@@ -25,16 +25,19 @@ public class ScorchThrusters extends BaseCard {
             2 //Can use -1 for X, or -2 for unplayable
     );
 
+    private final static int MAGIC = 4;
+
     public ScorchThrusters() {
         super(ID, info);
         cardsToPreview = new Thruster();
+        setMagic(MAGIC);
         setCostUpgrade(1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_FLAME_BARRIER"));
-        addToBot(new ApplyPowerAction(p, p, new ScorchThrustersPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new ScorchThrustersPower(p, this.magicNumber)));
     }
 
     @Override

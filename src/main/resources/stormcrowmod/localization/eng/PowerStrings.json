@@ -37,7 +37,7 @@
     "NAME": "More Power",
     "DESCRIPTIONS": [
       "Your #yThrusters grant an additional #b",
-      " #yBlock."
+      " #yTemporary Strength."
     ]
   },
   "${modID}:VulnerableNextTurn": {
@@ -59,7 +59,7 @@
     "NAME": "Hop Maneuvers",
     "DESCRIPTIONS": [
       "Gain #b",
-      " #yMomentum when you trigger a #yPulse effect."
+      " #yBlock when you trigger a #yPulse effect."
     ]
   },
   "${modID}:ReactionForce": {
@@ -181,9 +181,8 @@
   "${modID}:ScorchThrusters": {
     "NAME": "Scorch Thrusters",
     "DESCRIPTIONS": [
-      "When you play a #yThruster, deal damage equal to",
-      " its #yBlock to ALL enemies.",
-      " #b"
+      "When you play a #yThruster, deal #b",
+      " damage to ALL enemies"
     ]
   },
   "${modID}:StasisShield": {
