@@ -151,7 +151,12 @@
   "${modID}:PulseThrusters": {
     "NAME": "Pulse Thrusters",
     "DESCRIPTIONS": [
-      "Your #yThrusters gain #yPulse: Gain 1 Temporary #yDexterity."
+      "Every #b",
+      " #yThrusters drawn, gain #b",
+      " #yInvert.",
+      " #yInverts.",
+      " NL Need to draw #b",
+      " more #yThrusters."
     ]
   },
   "${modID}:UnstoppableForm": {

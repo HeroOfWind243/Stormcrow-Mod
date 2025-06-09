@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import stormcrowmod.cards.created.Impact;
+import stormcrowmod.powers.ImpulsedThisTurnPower;
 import stormcrowmod.powers.MomentumPower;
 import stormcrowmod.util.PilotTags;
 
@@ -36,7 +37,7 @@ public class ImpulseAction extends AbstractGameAction {
                 }
             }
             addToTop(new ApplyPowerAction(target, target, new MomentumPower(target, momentumToGrant)));
-            if (!hasAnImpact) {
+            if (!hasAnImpact /*!target.hasPower(ImpulsedThisTurnPower.POWER_ID)*/) {
                 Impact impact = new Impact();
                 addToTop(new MakeTempCardInHandAction(impact, 1));
                 addToTop(new VFXAction(target, new FlameBarrierEffect(target.hb.cX, target.hb.cY), 0.1F));

@@ -3,7 +3,7 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:Thruster": {
+  "${modID}:ThrusterOld": {
     "NAME": "Thruster",
     "DESCRIPTION": "On draw, gain !B! Block. NL Draw 1 card.",
     "EXTENDED_DESCRIPTION": [
@@ -11,7 +11,7 @@
       " NL ${modID}:Pulse: Gain 1 Temporary Dexterity."
     ]
   },
-  "${modID}:ThrusterV2": {
+  "${modID}:Thruster": {
     "NAME": "Thruster",
     "DESCRIPTION": "Unplayable. NL On draw, gain !M! Strength and !${modID}:dagic! Dexterity for this turn only, then draw 1 card."
   },
@@ -57,7 +57,7 @@
   },
   "${modID}:Slide": {
     "NAME": "Slide",
-    "DESCRIPTION": "Gain [E]. NL {@@}Next turn, draw !M! additional card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "Gain [E]. NL Gain !M! Temporary Strength. NL Exhaust."
   },
   "${modID}:Overcharge": {
     "NAME": "Overcharge",
@@ -112,7 +112,7 @@
   },
   "${modID}:Afterburner": {
     "NAME": "Afterburner",
-    "DESCRIPTION": "Draw !${modID}:baseDraw! cards.  If you draw any *Thrusters, draw !M! additional {@@}card{!M!|>1=s}."
+    "DESCRIPTION": "Draw !${modID}:baseDraw! cards. NL If a *Thruster is drawn, Exhaust it and draw !M! additional {@@}card{!M!|>1=s}."
   },
   "${modID}:Agility": {
     "NAME": "Agility",
@@ -219,7 +219,7 @@
   },
   "${modID}:ExhaustJets": {
     "NAME": "Exhaust Jets",
-    "DESCRIPTION": "Exhaust 1 card. NL Gain !B! Block. NL If you exhausted a *Thruster, draw !M! cards."
+    "DESCRIPTION": "Choose a card in your draw pile to exhaust. NL Gain !B! Block. NL If you Exhaust a *Thruster, gain !B! Block."
   },
   "${modID}:PulseFrequency": {
     "NAME": "Pulse Frequency",
@@ -329,7 +329,7 @@
   },
   "${modID}:PulseThrusters": {
     "NAME": "Pulse Thrusters",
-    "DESCRIPTION": "Your *Thrusters gain ${modID}:Pulse: Gain 1 Temporary Dexterity."
+    "DESCRIPTION": "For every 4 *Thrusters drawn, add an *Invert to your hand."
   },
   "${modID}:UnstoppableForm": {
     "NAME": "Unstoppable Form",

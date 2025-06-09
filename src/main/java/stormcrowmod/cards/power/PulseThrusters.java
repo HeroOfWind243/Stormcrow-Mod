@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Impact;
+import stormcrowmod.cards.created.Invert;
 import stormcrowmod.cards.created.Thruster;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.powers.ImpulsivePower;
@@ -25,12 +26,12 @@ public class PulseThrusters extends BaseCard {
     public PulseThrusters() {
         super(ID, info);
         setCostUpgrade(0);
-        cardsToPreview = new Thruster();
+        cardsToPreview = new Invert();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PulseThrustersPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new PulseThrustersPower(p, 1)));
     }
 
     @Override

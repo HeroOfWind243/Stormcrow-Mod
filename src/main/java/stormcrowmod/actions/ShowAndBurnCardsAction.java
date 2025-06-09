@@ -28,8 +28,10 @@ public class ShowAndBurnCardsAction extends AbstractGameAction {
     public void update() {
         if (this.duration == 2.0f && !burning) {
             for (AbstractCard c : cards) {
+                c.untip();
                 c.lighten(true);
                 AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c));
+
             }
             burning = true;
         }

@@ -1,22 +1,14 @@
 package stormcrowmod.cards.skill;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-import stormcrowmod.actions.BurstThrusterAction;
-import stormcrowmod.actions.ExhaustCardAction;
 import stormcrowmod.actions.ShowAndBurnCardsAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.cards.created.Thruster;
-import stormcrowmod.cards.created.ThrusterV2;
 import stormcrowmod.character.PilotCharacter;
 import stormcrowmod.powers.KillThrusterPower;
 import stormcrowmod.util.CardStats;
@@ -55,14 +47,14 @@ public class BurstThruster extends BaseCard {
 
         Consumer<List<AbstractCard>> buffs = c -> {
             for (AbstractCard t : c) {
-                if (t instanceof ThrusterV2) {
+                if (t instanceof Thruster) {
                     t.applyPowers();
                 }
             }
             addToBot(new ShowAndBurnCardsAction(c));
             for (AbstractCard t : c) {
-                if (t instanceof ThrusterV2) {
-                    ((ThrusterV2)t).grantBuffs(p);
+                if (t instanceof Thruster) {
+                    ((Thruster)t).grantBuffs(p);
                 }
             }
         };
