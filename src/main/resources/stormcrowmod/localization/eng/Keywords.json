@@ -26,7 +26,7 @@
     "NAMES": [
       "momentum"
     ],
-    "DESCRIPTION": "A buff that scales the amount of damage #yImpact does. Increases when you play cards, decreases when you lose HP."
+    "DESCRIPTION": "A buff that scales the amount of damage #yImpact does. Increases when you play cards, halves at the end of your turn."
   },
   {
     "ID": "impulse",
