@@ -22,16 +22,16 @@ public class ScorchThrusters extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            2 //Can use -1 for X, or -2 for unplayable
+            1 //Can use -1 for X, or -2 for unplayable
     );
 
     private final static int MAGIC = 4;
+    private final static int UPG_MAGIC = 2;
 
     public ScorchThrusters() {
         super(ID, info);
         cardsToPreview = new Thruster();
-        setMagic(MAGIC);
-        setCostUpgrade(1);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

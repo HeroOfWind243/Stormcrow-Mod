@@ -29,7 +29,7 @@ public class ASuddenMoment extends BaseCard {
         super(ID, info);
 
         setSelfRetain(true);
-        setExhaust(true);
+//        setExhaust(true);
         setMagic(MAGIC, UPG_MAGIC);
         this.cardsToPreview = new Impact();
     }

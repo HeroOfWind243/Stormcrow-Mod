@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import stormcrowmod.actions.ImpulseAction;
 import stormcrowmod.actions.PulseAction;
 import stormcrowmod.cards.BaseCard;
 import stormcrowmod.character.PilotCharacter;
@@ -21,10 +22,10 @@ public class Agility extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 2;
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 3;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 4;
 
     public Agility() {
         super(ID, info);
@@ -39,7 +40,8 @@ public class Agility extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new PulseAction(new DrawCardAction(p,this.magicNumber)));
+//        addToBot(new PulseAction(new DrawCardAction(p,this.magicNumber)));
+        addToBot(new PulseAction(new ImpulseAction(p, this.magicNumber)));
     }
 
     @Override

@@ -13,5 +13,13 @@
       "At the start of each combat, gain #b",
       " #yBlock."
     ]
+  },
+  "${modID}:KineticShield": {
+    "NAME": "Kinetic Shield",
+    "FLAVOR": "Unstable, but efficient.",
+    "DESCRIPTIONS": [
+      "Replaces #rKinetic #rShield. When you draw a card, gain #b",
+      " #yBlock."
+    ]
   }
 }

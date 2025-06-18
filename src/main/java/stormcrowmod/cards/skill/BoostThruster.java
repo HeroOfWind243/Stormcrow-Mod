@@ -1,9 +1,12 @@
 package stormcrowmod.cards.skill;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import stormcrowmod.actions.CreateThrusterAction;
@@ -21,7 +24,7 @@ public class BoostThruster extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            0 //Can use -1 for X, or -2 for unplayable
+            -2 //Can use -1 for X, or -2 for unplayable
     );
 
     private static final int BLOCK = 4;
@@ -40,8 +43,25 @@ public class BoostThruster extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new CreateThrusterAction(this.magicNumber));
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        addToBot(new CreateThrusterAction(1, this.upgraded));
+        addToBot(new DiscardSpecificCardAction(this));
+        addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+    }
+
+    @Override
+    public void applyPowers() {
+        if (this.upgraded) {
+            cardsToPreview.upgrade();
+        }
+    }
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        return false;
     }
 
     @Override

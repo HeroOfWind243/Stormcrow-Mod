@@ -28,8 +28,8 @@ public class MegaThruster extends BaseCard {
             2 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 4;
+    private static final int UPG_DAMAGE = 1;
 
     public MegaThruster() {
         super(ID, info);

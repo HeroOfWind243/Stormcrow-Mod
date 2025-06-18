@@ -13,7 +13,8 @@
   },
   "${modID}:Thruster": {
     "NAME": "Thruster",
-    "DESCRIPTION": "Unplayable. NL On draw, gain !M! Strength and !${modID}:dagic! Dexterity for this turn only, then draw 1 card."
+    "DESCRIPTION": "Unplayable. NL On draw, gain !M! Strength and !${modID}:dagic! Dexterity for this turn only, then draw 1 card.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${modID}:Defend": {
     "NAME": "Defend",
@@ -33,7 +34,7 @@
   },
   "${modID}:Takeoff": {
     "NAME": "Takeoff",
-    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Impulse !M!."
+    "DESCRIPTION": "Choose one: NL Gain !B! Block or ${modID}:Impulse !M!."
   },
   "${modID}:PulseShot": {
     "NAME": "Pulse Shot",
@@ -99,8 +100,9 @@
   },
   "${modID}:Inertia": {
   "NAME": "Inertia",
-  "DESCRIPTION": "Gain Block equal to ${modID}:Momentum. (!B! Block) NL Exhaust.",
-    "UPGRADE_DESCRIPTION":"Gain Block equal to ${modID}:Momentum. (!B! Block)"
+  "DESCRIPTION": "Gain Block equal to ${modID}:Momentum. NL Exhaust.",
+    "UPGRADE_DESCRIPTION":"Gain Block equal to ${modID}:Momentum.",
+    "EXTENDED_DESCRIPTION": [" NL (Gain !B! Block)"]
   },
   "${modID}:BoostKick": {
     "NAME": "Boost Kick",
@@ -116,11 +118,11 @@
   },
   "${modID}:Agility": {
     "NAME": "Agility",
-    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Draw !M! cards."
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Pulse: Impulse !M!."
   },
   "${modID}:ASuddenMoment": {
     "NAME": "A Sudden Moment",
-    "DESCRIPTION": "Retain. NL ${modID}:Impulse !M!. NL Exhaust."
+    "DESCRIPTION": "Retain. NL ${modID}:Impulse !M!."
   },
   "${modID}:WideFlank": {
     "NAME": "Wide Flank",
@@ -188,7 +190,9 @@
   },
   "${modID}:BoostThruster": {
     "NAME": "Boost Thruster",
-    "DESCRIPTION": "Gain !B! Block. NL Shuffle a *Thruster into your draw pile."
+    "DESCRIPTION": "Unplayable. NL On draw, shuffle a *Thruster into your draw pile. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL On draw, shuffle a *Thruster+ into your draw pile. NL Draw a card.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${modID}:RunningStart": {
     "NAME": "Running Start",
@@ -346,11 +350,11 @@
   },
   "${modID}:Oscillation": {
     "NAME": "Oscillation",
-    "DESCRIPTION": "The next {!M!|>1=two }{@@}time{!M!|>1=s} you play a ${modID}:Pulse card, ${modID}:Pulse, then play it again."
+    "DESCRIPTION": "The next {!M!|>1=two }{@@}time{!M!|>1=s} this turn you play a ${modID}:Pulse card, ${modID}:Pulse, then play it again."
   },
   "${modID}:ScorchThrusters": {
     "NAME": "Scorch Thrusters",
-    "DESCRIPTION": "When you play a *Thruster, deal damage equal to its Block to ALL enemies."
+    "DESCRIPTION": "When you draw a *Thruster, deal !M! damage to ALL enemies."
   },
   "${modID}:Dodge": {
     "NAME": "Dodge",
@@ -372,5 +376,13 @@
     "NAME": "Shattercrash",
     "DESCRIPTION": "Exhaust an *Impact in your hand. NL Deal its damage X times.",
     "UPGRADE_DESCRIPTION": "Exhaust an *Impact in your hand. NL Deal its damage X+1 times."
+  },
+  "${modID}:AttackFormation": {
+    "NAME": "Attack Formation",
+    "DESCRIPTION": "${modID}:Impulse !M!."
+  },
+  "${modID}:GuardFormation": {
+    "NAME": "Guard Formation",
+    "DESCRIPTION": "Gain !B! Block."
   }
 }

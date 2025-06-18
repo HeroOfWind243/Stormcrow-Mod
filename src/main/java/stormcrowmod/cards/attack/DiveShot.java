@@ -22,8 +22,8 @@ public class DiveShot extends BaseCard {
             1 //Can use -1 for X, or -2 for unplayable
     );
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 6;
+    private static final int UPG_DAMAGE = 3;
 
     public DiveShot() {
         super(ID, info);

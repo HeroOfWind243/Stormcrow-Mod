@@ -54,6 +54,11 @@ public class OscillationPower extends BasePower {
     }
 
     @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+    }
+
+    @Override
     public void updateDescription() {
         if (this.amount > 1) {
             this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[3] + DESCRIPTIONS[1];

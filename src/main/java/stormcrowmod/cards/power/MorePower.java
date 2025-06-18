@@ -22,12 +22,13 @@ public class MorePower extends BaseCard {
     );
 
     private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int UPG_MAGIC = 0;
 
     public MorePower() {
         super(ID, info);
         this.cardsToPreview = new Thruster();
         setMagic(MAGIC, UPG_MAGIC);
+        setCostUpgrade(0);
     }
 
     @Override

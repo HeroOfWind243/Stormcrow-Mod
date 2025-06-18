@@ -16,18 +16,19 @@ public class ScorchThrustersPower extends BasePower {
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 
+    // Effect takes place in Thruster's code
     public ScorchThrustersPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
-    @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(PilotTags.THRUSTER)) {
-            flash();
-            int dmg = amount;
-            addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(dmg,false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
-        }
-    }
+//    @Override
+//    public void onUseCard(AbstractCard card, UseCardAction action) {
+//        if (card.hasTag(PilotTags.THRUSTER)) {
+//            flash();
+//            int dmg = amount;
+//            addToBot(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(dmg,false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
+//        }
+//    }
 
     @Override
     public void updateDescription() {

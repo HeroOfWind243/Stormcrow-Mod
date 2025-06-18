@@ -37,8 +37,6 @@ public class HangInThere extends BaseCard {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
-
-        tags.add(PilotTags.PULSE);
     }
 
     @Override

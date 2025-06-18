@@ -55,6 +55,25 @@ public class Inertia extends BaseCard {
         this.baseBlock = BLOCK;
         this.baseBlock += currentMomentum(AbstractDungeon.player);
         super.applyPowers();
+
+        if (!this.upgraded) {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        } else {
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        }
+
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+
+        initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        if (!this.upgraded) {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        } else {
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        }
         initializeDescription();
     }
 
