@@ -106,11 +106,11 @@
   },
   "${modID}:BoostKick": {
     "NAME": "Boost Kick",
-    "DESCRIPTION": "Deal !D! damage. Shuffle a *Thruster into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a *Thruster into your draw pile."
   },
   "${modID}:ReverseBoost": {
     "NAME": "Reverse Boost",
-    "DESCRIPTION": "Gain !B! Block. Shuffle a *Thruster into your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Shuffle a *Thruster into your draw pile."
   },
   "${modID}:Afterburner": {
     "NAME": "Afterburner",
