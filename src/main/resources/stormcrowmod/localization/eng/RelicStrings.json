@@ -21,5 +21,12 @@
       "Replaces #rKinetic #rShield. When you draw a card, gain #b",
       " #yBlock."
     ]
+  },
+  "${modID}:NotchFilter": {
+    "NAME": "Notch Filter",
+    "FLAVOR": "Find the perfect moment, electronically.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add an #yInvert+ to your hand."
+    ]
   }
 }
